@@ -1,6 +1,6 @@
 /* =========================================================
    Ahmed Ali — Advanced QA Portfolio
-   Final Interactions & Animations
+   Final Clean Interactions & Animations
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -9,164 +9,29 @@ document.addEventListener("DOMContentLoaded", () => {
     "(prefers-reduced-motion: reduce)"
   ).matches;
 
+  const finePointer = window.matchMedia(
+    "(pointer: fine)"
+  ).matches;
+
 
   /* =======================================================
-     External Link Security
+     EXTERNAL LINK SECURITY
      ======================================================= */
 
   document
     .querySelectorAll('a[target="_blank"]')
     .forEach((link) => {
-      link.setAttribute("rel", "noopener noreferrer");
+
+      link.setAttribute(
+        "rel",
+        "noopener noreferrer"
+      );
+
     });
 
 
   /* =======================================================
-     CV Dropdowns
-     ======================================================= */
-
-  const cvDropdowns =
-    document.querySelectorAll(".cv-dropdown");
-
-  cvDropdowns.forEach((dropdown) => {
-
-    const toggle =
-      dropdown.querySelector(".cv-toggle");
-
-    const menu =
-      dropdown.querySelector(".cv-menu");
-
-    if (!toggle || !menu) {
-      return;
-    }
-
-
-    toggle.addEventListener("click", (event) => {
-
-      event.stopPropagation();
-
-      const isOpen =
-        dropdown.classList.contains("open");
-
-
-      /* Close all dropdowns first */
-
-      cvDropdowns.forEach((item) => {
-
-        item.classList.remove("open");
-
-        const itemToggle =
-          item.querySelector(".cv-toggle");
-
-        if (itemToggle) {
-          itemToggle.setAttribute(
-            "aria-expanded",
-            "false"
-          );
-        }
-
-      });
-
-
-      /* Open clicked dropdown */
-
-      if (!isOpen) {
-
-        dropdown.classList.add("open");
-
-        toggle.setAttribute(
-          "aria-expanded",
-          "true"
-        );
-
-      }
-
-    });
-
-
-    /* Prevent menu click from instantly closing */
-
-    menu.addEventListener("click", (event) => {
-      event.stopPropagation();
-    });
-
-
-    /* Close after clicking a CV */
-
-    menu.querySelectorAll("a").forEach((link) => {
-
-      link.addEventListener("click", () => {
-
-        dropdown.classList.remove("open");
-
-        toggle.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-      });
-
-    });
-
-  });
-
-
-  /* Close dropdown when clicking outside */
-
-  document.addEventListener("click", () => {
-
-    cvDropdowns.forEach((dropdown) => {
-
-      dropdown.classList.remove("open");
-
-      const toggle =
-        dropdown.querySelector(".cv-toggle");
-
-      if (toggle) {
-
-        toggle.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-      }
-
-    });
-
-  });
-
-
-  /* Close dropdown with Escape */
-
-  document.addEventListener("keydown", (event) => {
-
-    if (event.key !== "Escape") {
-      return;
-    }
-
-    cvDropdowns.forEach((dropdown) => {
-
-      dropdown.classList.remove("open");
-
-      const toggle =
-        dropdown.querySelector(".cv-toggle");
-
-      if (toggle) {
-
-        toggle.setAttribute(
-          "aria-expanded",
-          "false"
-        );
-
-      }
-
-    });
-
-  });
-
-
-  /* =======================================================
-     Reveal On Scroll
+     REVEAL ON SCROLL
      ======================================================= */
 
   const revealElements =
@@ -187,7 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!reducedMotion) {
 
     revealElements.forEach((element) => {
+
       element.classList.add("reveal");
+
     });
 
 
@@ -224,14 +91,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     revealElements.forEach((element) => {
+
       revealObserver.observe(element);
+
+    });
+
+  } else {
+
+    revealElements.forEach((element) => {
+
+      element.classList.add("visible");
+
     });
 
   }
 
 
   /* =======================================================
-     Hero Entrance Animation
+     HERO ENTRANCE ANIMATION
      ======================================================= */
 
   if (!reducedMotion) {
@@ -272,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
             {
               opacity: 0,
               transform:
-                "translateY(25px)"
+                "translateY(22px)"
             },
 
             {
@@ -286,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
             duration: 700,
 
             delay:
-              120 + index * 110,
+              100 + index * 100,
 
             easing:
               "cubic-bezier(.2,.7,.2,1)",
@@ -303,7 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     Active Navbar Section
+     ACTIVE NAVBAR SECTION
      ======================================================= */
 
   const sections =
@@ -317,62 +194,76 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
+  function setActiveNav(sectionId) {
+
+    navLinks.forEach((link) => {
+
+      const href =
+        link.getAttribute("href");
+
+      link.classList.toggle(
+        "active",
+        href === `#${sectionId}`
+      );
+
+    });
+
+  }
+
+
   const sectionObserver =
     new IntersectionObserver(
 
       (entries) => {
 
-        entries.forEach((entry) => {
-
-          if (!entry.isIntersecting) {
-            return;
-          }
-
-
-          navLinks.forEach((link) => {
-
-            link.classList.remove(
-              "active"
+        const visibleEntries =
+          entries
+            .filter(
+              (entry) =>
+                entry.isIntersecting
+            )
+            .sort(
+              (a, b) =>
+                b.intersectionRatio -
+                a.intersectionRatio
             );
 
-            const target =
-              link.getAttribute("href");
+
+        if (visibleEntries.length === 0) {
+          return;
+        }
 
 
-            if (
-              target ===
-              `#${entry.target.id}`
-            ) {
-
-              link.classList.add(
-                "active"
-              );
-
-            }
-
-          });
-
-        });
+        setActiveNav(
+          visibleEntries[0].target.id
+        );
 
       },
 
       {
-        threshold: 0.25,
+        threshold: [
+          0.1,
+          0.25,
+          0.4,
+          0.6
+        ],
 
         rootMargin:
-          "-20% 0px -55% 0px"
+          "-18% 0px -58% 0px"
       }
 
     );
 
 
   sections.forEach((section) => {
+
     sectionObserver.observe(section);
+
   });
 
 
   /* =======================================================
-     Navbar Scroll Effect
+     NAVBAR SCROLL EFFECT
      ======================================================= */
 
   const navbar =
@@ -389,10 +280,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.scrollY > 40) {
 
       navbar.style.background =
-        "rgba(5, 9, 13, 0.92)";
+        "rgba(5, 9, 13, 0.94)";
 
       navbar.style.boxShadow =
-        "0 8px 40px rgba(0,0,0,0.18)";
+        "0 10px 45px rgba(0,0,0,0.20)";
 
     } else {
 
@@ -418,7 +309,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     Hero Mouse Parallax
+     HERO MOUSE PARALLAX
      ======================================================= */
 
   const hero =
@@ -434,10 +325,12 @@ document.addEventListener("DOMContentLoaded", () => {
     hero &&
     heroRight &&
     !reducedMotion &&
-    window.matchMedia(
-      "(pointer: fine)"
-    ).matches
+    finePointer
   ) {
+
+    heroRight.style.transition =
+      "transform 0.18s ease-out";
+
 
     hero.addEventListener(
       "mousemove",
@@ -466,11 +359,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         heroRight.style.transform =
-          `translate3d(
-            ${x * 10}px,
-            ${y * 8}px,
+          `
+          translate3d(
+            ${x * 9}px,
+            ${y * 7}px,
             0
-          )`;
+          )
+          `;
 
       }
     );
@@ -490,7 +385,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     Project Card Interactive Hover
+     PROJECT CARD 3D HOVER
      ======================================================= */
 
   const projectCards =
@@ -501,9 +396,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (
     !reducedMotion &&
-    window.matchMedia(
-      "(pointer: fine)"
-    ).matches
+    finePointer
   ) {
 
     projectCards.forEach((card) => {
@@ -555,9 +448,7 @@ document.addEventListener("DOMContentLoaded", () => {
             rgba(0,0,0,.38),
 
             ${rotateY * -4}px
-
             ${rotateX * 4}px
-
             45px
             rgba(85,230,193,.05)
             `;
@@ -583,7 +474,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     Language Card Stagger
+     LANGUAGE CARD STAGGER
      ======================================================= */
 
   const languageCards =
@@ -607,7 +498,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     Skill Card Stagger
+     SKILL CARD STAGGER
      ======================================================= */
 
   const skillCards =
@@ -631,7 +522,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     Smooth Internal Navigation
+     SMOOTH INTERNAL NAVIGATION
      ======================================================= */
 
   document
@@ -688,7 +579,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     Back To Top
+     BACK TO TOP
      ======================================================= */
 
   const backToTop =
@@ -724,7 +615,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     Logo Back To Top
+     LOGO BACK TO TOP
      ======================================================= */
 
   const logo =
@@ -760,7 +651,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     Background Mouse Parallax
+     BACKGROUND MOUSE PARALLAX
      ======================================================= */
 
   const background =
@@ -772,10 +663,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (
     background &&
     !reducedMotion &&
-    window.matchMedia(
-      "(pointer: fine)"
-    ).matches
+    finePointer
   ) {
+
+    background.style.transition =
+      "transform 0.15s ease-out";
+
 
     document.addEventListener(
       "mousemove",
@@ -809,7 +702,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =======================================================
-     Console Signature
+     RESET PARALLAX WHEN TAB LOSES FOCUS
+     ======================================================= */
+
+  window.addEventListener(
+    "blur",
+    () => {
+
+      if (heroRight) {
+
+        heroRight.style.transform =
+          "translate3d(0, 0, 0)";
+
+      }
+
+
+      if (background) {
+
+        background.style.transform =
+          "translate(0, 0) scale(1)";
+
+      }
+
+    }
+  );
+
+
+  /* =======================================================
+     CONSOLE SIGNATURE
      ======================================================= */
 
   console.log(
