@@ -9,9 +9,7 @@
     content="width=device-width, initial-scale=1.0"
   />
 
-  <title>
-    Ahmed Ali | Software QA Engineer
-  </title>
+  <title>Ahmed Ali | Software QA Engineer</title>
 
   <meta
     name="description"
@@ -61,13 +59,18 @@
 
     <div class="container nav-inner">
 
+      <!-- Logo -->
+
       <a
         href="#"
         class="logo"
+        aria-label="Back to top"
       >
         AHMED<span>.ALI</span>
       </a>
 
+
+      <!-- Navigation -->
 
       <nav class="nav-links">
 
@@ -98,13 +101,49 @@
       </nav>
 
 
-      <a
-        href="./assets/cv.pdf"
-        class="cv-btn"
-        download="Ahmed-Ali-CV.pdf"
-      >
-        CV ↓
-      </a>
+      <!-- Navbar CV Dropdown -->
+
+      <div class="cv-dropdown">
+
+        <button
+          class="cv-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-haspopup="true"
+        >
+          CV
+
+          <span class="cv-chevron">
+            ↓
+          </span>
+        </button>
+
+
+        <div class="cv-menu">
+
+          <span class="cv-menu-label">
+            Download CV
+          </span>
+
+
+          <a
+            href="./assets/cv-de.pdf"
+            download="Ahmed-Ali-CV-German.pdf"
+          >
+            German CV
+          </a>
+
+
+          <a
+            href="./assets/cv-en.pdf"
+            download="Ahmed-Ali-CV-English.pdf"
+          >
+            English CV
+          </a>
+
+        </div>
+
+      </div>
 
     </div>
 
@@ -204,6 +243,9 @@
 
         <div class="hero-actions">
 
+
+          <!-- View Projects -->
+
           <a
             href="#projects"
             class="btn btn-primary"
@@ -212,13 +254,49 @@
           </a>
 
 
-          <a
-            href="./assets/cv.pdf"
-            class="btn btn-secondary"
-            download="Ahmed-Ali-CV.pdf"
-          >
-            DOWNLOAD CV
-          </a>
+          <!-- Hero CV Dropdown -->
+
+          <div class="cv-dropdown hero-cv-dropdown">
+
+            <button
+              class="btn btn-secondary cv-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              DOWNLOAD CV
+
+              <span class="cv-chevron">
+                ↓
+              </span>
+            </button>
+
+
+            <div class="cv-menu">
+
+              <span class="cv-menu-label">
+                Select Language
+              </span>
+
+
+              <a
+                href="./assets/cv-de.pdf"
+                download="Ahmed-Ali-CV-German.pdf"
+              >
+                German CV
+              </a>
+
+
+              <a
+                href="./assets/cv-en.pdf"
+                download="Ahmed-Ali-CV-English.pdf"
+              >
+                English CV
+              </a>
+
+            </div>
+
+          </div>
 
         </div>
 
@@ -246,7 +324,7 @@
         </div>
 
 
-        <!-- QA Status -->
+        <!-- Testing Status Cards -->
 
         <div class="floating-card card-1">
 
@@ -361,7 +439,7 @@
 
             <img
               src="./assets/images/shopmate-cover.png"
-              alt="ShopMate QA Project"
+              alt="ShopMate QA project"
             />
 
           </div>
@@ -401,7 +479,7 @@
             </div>
 
 
-            <!-- Tools / Activities -->
+            <!-- Technologies -->
 
             <div class="tags">
 
@@ -458,7 +536,7 @@
 
             <img
               src="./assets/images/shopsphere-cover.png"
-              alt="ShopSphere Selenium Java Automation Project"
+              alt="ShopSphere automation framework"
             />
 
           </div>
@@ -494,7 +572,7 @@
             </div>
 
 
-            <!-- Tools -->
+            <!-- Technologies -->
 
             <div class="tags">
 
@@ -760,7 +838,7 @@
 
 
 
-          <!-- Tools -->
+          <!-- Tools / CI-CD -->
 
           <div class="skill-box">
 
@@ -777,7 +855,6 @@
             </p>
 
           </div>
-
 
         </div>
 
@@ -837,7 +914,7 @@
 
 
 
-        <!-- ISTQB GenAI -->
+        <!-- ISTQB CT-GenAI -->
 
         <div class="cert-card">
 
@@ -914,7 +991,7 @@
           </h3>
 
           <div class="language-level">
-            C1 · Fluent
+            C1
           </div>
 
         </article>
@@ -934,7 +1011,7 @@
           </h3>
 
           <div class="language-level">
-            C1 · Fluent
+            C1
           </div>
 
         </article>
@@ -958,7 +1035,6 @@
           </div>
 
         </article>
-
 
       </div>
 
@@ -1008,8 +1084,9 @@
 
         <!-- Email -->
 
-        <a href="mailto:ahmedali328123@gmail.com">
-
+        <a
+          href="mailto:ahmedali328123@gmail.com"
+        >
           Email Me
 
           <br />
@@ -1017,7 +1094,6 @@
           <span>
             ahmedali328123@gmail.com
           </span>
-
         </a>
 
 
@@ -1029,7 +1105,6 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-
           LinkedIn
 
           <br />
@@ -1037,7 +1112,6 @@
           <span>
             /in/ahmedali328123
           </span>
-
         </a>
 
 
@@ -1049,7 +1123,6 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-
           GitHub
 
           <br />
@@ -1057,7 +1130,6 @@
           <span>
             github.com/ahmed328123
           </span>
-
         </a>
 
 
@@ -1065,20 +1137,31 @@
         <!-- CV -->
 
         <a
-          href="./assets/cv.pdf"
-          download="Ahmed-Ali-CV.pdf"
+          href="./assets/cv-de.pdf"
+          download="Ahmed-Ali-CV-German.pdf"
         >
-
-          Download CV
+          German CV
 
           <br />
 
           <span>
-            Ahmed-Ali-CV.pdf
+            Download PDF
           </span>
-
         </a>
 
+
+        <a
+          href="./assets/cv-en.pdf"
+          download="Ahmed-Ali-CV-English.pdf"
+        >
+          English CV
+
+          <br />
+
+          <span>
+            Download PDF
+          </span>
+        </a>
 
       </div>
 
@@ -1116,7 +1199,6 @@
   <!-- JavaScript -->
 
   <script src="script.js"></script>
-
 
 </body>
 
