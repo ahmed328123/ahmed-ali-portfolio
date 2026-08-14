@@ -1,1215 +1,3554 @@
-<!DOCTYPE html>
-<html lang="en">
+/* =========================================================
+   AHMED ALI — PREMIUM LIGHT QA PORTFOLIO
+   Final Light Edition
+   ========================================================= */
 
-<head>
+:root {
 
-  <meta charset="UTF-8" />
+  /* Core palette */
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+  --bg: #f3f7f7;
+  --bg-soft: #eef4f4;
 
-  <meta
-    name="color-scheme"
-    content="light"
-  />
+  --surface: #ffffff;
+  --surface-soft: rgba(255, 255, 255, 0.78);
 
-  <meta
-    name="theme-color"
-    content="#f3f7f7"
-  />
+  --text: #101820;
+  --text-soft: #5d6a71;
+  --text-muted: #859198;
 
-  <title>
-    Ahmed Ali | Software QA Engineer
-  </title>
+  --accent: #14b89a;
+  --accent-dark: #078a73;
 
-  <meta
-    name="description"
-    content="Ahmed Ali - Software QA Engineer specializing in Manual Testing, Automation Testing, Playwright, Selenium, Java, TypeScript, API Testing and CI/CD."
-  />
+  --accent-soft: #e9f8f4;
+  --accent-glow: rgba(20, 184, 154, 0.13);
 
+  --blue: #3f7ee8;
 
-  <!-- Google Fonts -->
+  --border: #dce5e6;
+  --border-soft: rgba(16, 24, 32, 0.07);
 
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  />
+  --shadow:
+    0 15px 42px
+    rgba(31, 51, 57, 0.07);
 
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  />
+  --shadow-hover:
+    0 22px 58px
+    rgba(31, 51, 57, 0.12);
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  --container: 1440px;
 
+  --font-main: "Inter", sans-serif;
+  --font-title: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
 
-  <!-- CSS -->
 
-  <link
-    rel="stylesheet"
-    href="./style.css?v=3"
-  />
+/* =========================================================
+   RESET
+   ========================================================= */
 
-</head>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+html {
+  scroll-behavior: smooth;
+}
 
-<body>
+body {
 
+  min-height: 100vh;
 
-  <!-- =====================================================
-       BACKGROUND
-       ===================================================== -->
+  overflow-x: hidden;
 
-  <div
-    class="page-bg"
-    aria-hidden="true"
-  ></div>
+  color: var(--text);
 
-  <div
-    class="noise"
-    aria-hidden="true"
-  ></div>
+  font-family: var(--font-main);
 
+  background:
+    linear-gradient(
+      180deg,
+      #f7fafa 0%,
+      var(--bg) 45%,
+      #f1f6f6 100%
+    );
+}
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-  <!-- =====================================================
-       NAVIGATION
-       ===================================================== -->
+button {
+  font: inherit;
+}
 
-  <header class="navbar">
+img {
+  display: block;
+  max-width: 100%;
+}
 
-    <div class="container nav-inner">
+ul {
+  padding-left: 18px;
+}
 
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
 
-      <!-- Logo -->
+::selection {
+  color: #ffffff;
+  background: var(--accent);
+}
 
-      <a
-        href="#"
-        class="logo"
-        aria-label="Ahmed Ali — back to top"
-      >
-        AHMED<span>.ALI</span>
-      </a>
 
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
 
+a:focus-visible,
+button:focus-visible {
 
-      <!-- Navigation -->
+  outline:
+    3px solid rgba(20, 184, 154, 0.3);
 
-      <nav
-        class="nav-links"
-        aria-label="Main navigation"
-      >
+  outline-offset: 4px;
 
-        <a href="#projects">
-          Work
-        </a>
+  border-radius: 5px;
+}
 
-        <a href="#experience">
-          Experience
-        </a>
 
-        <a href="#skills">
-          Skills
-        </a>
+/* =========================================================
+   NAVIGATION OFFSET
+   ========================================================= */
 
-        <a href="#certifications">
-          Certifications
-        </a>
+#projects,
+#experience,
+#skills,
+#certifications,
+#languages,
+#contact {
 
-        <a href="#languages">
-          Languages
-        </a>
+  scroll-margin-top: 115px;
+}
 
-        <a href="#contact">
-          Contact
-        </a>
 
-      </nav>
+/* =========================================================
+   PAGE BACKGROUND
+   ========================================================= */
 
+.page-bg {
 
-    </div>
+  position: fixed;
 
-  </header>
+  inset: 0;
 
+  z-index: -3;
 
+  background:
 
-  <!-- =====================================================
-       MAIN
-       ===================================================== -->
+    radial-gradient(
+      circle at 72% 20%,
+      rgba(20, 184, 154, 0.085),
+      transparent 27%
+    ),
 
-  <main>
+    radial-gradient(
+      circle at 14% 45%,
+      rgba(63, 126, 232, 0.025),
+      transparent 30%
+    ),
 
+    linear-gradient(
+      180deg,
+      #f8fbfb 0%,
+      #f2f7f7 100%
+    );
+}
 
 
-    <!-- =====================================================
-         HERO
-         ===================================================== -->
+.page-bg::before {
 
-    <section
-      class="hero container"
-      aria-labelledby="hero-title"
-    >
+  content: "";
 
+  position: absolute;
 
-      <!-- Hero Left -->
+  inset: 0;
 
-      <div class="hero-left">
+  background-image:
 
+    linear-gradient(
+      rgba(28, 60, 64, 0.038) 1px,
+      transparent 1px
+    ),
 
-        <p class="status">
+    linear-gradient(
+      90deg,
+      rgba(28, 60, 64, 0.038) 1px,
+      transparent 1px
+    );
 
-          <span
-            class="dot"
-            aria-hidden="true"
-          ></span>
+  background-size:
+    42px 42px;
 
-          AVAILABLE FOR QA OPPORTUNITIES
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black 0%,
+      rgba(0, 0, 0, 0.55) 65%,
+      transparent 100%
+    );
 
-        </p>
+  -webkit-mask-image:
+    linear-gradient(
+      to bottom,
+      black 0%,
+      rgba(0, 0, 0, 0.55) 65%,
+      transparent 100%
+    );
+}
 
 
+.noise {
 
-        <!-- Name -->
+  position: fixed;
 
-        <h1
-          class="hero-title"
-          id="hero-title"
-        >
-          AHMED ALI
-        </h1>
+  inset: 0;
 
+  z-index: -2;
 
+  pointer-events: none;
 
-        <!-- Job Titles -->
+  opacity: 0.01;
 
-        <h2 class="hero-subtitle">
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='.8'/%3E%3C/svg%3E");
+}
 
-          SOFTWARE QA ENGINEER<br />
 
-          TEST AUTOMATION ENGINEER
+/* =========================================================
+   GLOBAL LAYOUT
+   ========================================================= */
 
-        </h2>
+.container {
 
+  width:
+    min(92%, var(--container));
 
+  margin-inline: auto;
+}
 
-        <!-- Description -->
 
-        <p class="hero-text">
+.section {
 
-          Building reliable software through structured
-          Manual Testing and practical Automation Testing.
+  padding:
+    105px 0;
 
-        </p>
+  border-top:
+    1px solid var(--border);
+}
 
 
+/* =========================================================
+   NAVBAR
+   ========================================================= */
 
-        <!-- Technology Stack -->
+.navbar {
 
-        <div
-          class="hero-stack"
-          aria-label="Core technologies"
-        >
+  position: sticky;
 
-          <span>
-            Manual Testing
-          </span>
+  top: 0;
 
-          <span>
-            Automation Testing
-          </span>
+  z-index: 999;
 
-          <span>
-            Playwright
-          </span>
+  width: 100%;
 
-          <span>
-            Selenium
-          </span>
+  background:
+    rgba(248, 251, 251, 0.9);
 
-          <span>
-            TypeScript
-          </span>
+  border-bottom:
+    1px solid rgba(16, 24, 32, 0.08);
 
-          <span>
-            Java
-          </span>
+  backdrop-filter:
+    blur(18px);
 
-          <span>
-            API Testing
-          </span>
+  -webkit-backdrop-filter:
+    blur(18px);
 
-          <span>
-            CI/CD
-          </span>
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
 
-        </div>
 
+.nav-inner {
 
+  position: relative;
 
-        <!-- Hero Actions -->
+  min-height: 82px;
 
-        <div class="hero-actions">
+  display: flex;
 
-          <a
-            href="#projects"
-            class="btn btn-primary"
-          >
-            VIEW PROJECTS ↗
-          </a>
+  align-items: center;
 
+  justify-content: space-between;
+}
 
-          <a
-            href="./assets/cv-en.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-secondary"
-          >
-            VIEW CV ↗
-          </a>
 
-        </div>
+/* Logo */
 
+.logo {
 
-      </div>
+  position: relative;
 
+  z-index: 2;
 
+  flex-shrink: 0;
 
-      <!-- Hero Right -->
+  color: var(--text);
 
-      <div
-        class="hero-right"
-        aria-hidden="true"
-      >
+  font-family: var(--font-title);
 
+  font-size: 22px;
 
-        <!-- Animated Technical Mesh -->
+  font-weight: 700;
 
-        <div class="mesh-wrap">
+  letter-spacing: -0.7px;
+}
 
-          <div class="mesh-core"></div>
 
-          <div class="orbit orbit-1"></div>
+.logo span {
+  color: var(--accent);
+}
 
-          <div class="orbit orbit-2"></div>
 
-          <div class="orbit orbit-3"></div>
+/* Navigation */
 
-        </div>
+.nav-links {
 
+  position: absolute;
 
+  left: 50%;
 
-        <!-- QA Status Cards -->
+  top: 50%;
 
-        <div class="floating-card card-1">
+  transform:
+    translate(-50%, -50%);
 
-          <p>
-            UI TESTING
-          </p>
+  display: flex;
 
-          <span>
+  align-items: center;
 
-            <i></i>
+  justify-content: center;
 
-            ACTIVE
+  gap: 38px;
 
-          </span>
+  white-space: nowrap;
+}
 
-        </div>
 
+.nav-links a {
 
-        <div class="floating-card card-2">
+  position: relative;
 
-          <p>
-            API TESTING
-          </p>
+  color: #66737a;
 
-          <span>
+  font-size: 12px;
 
-            <i></i>
+  font-weight: 700;
 
-            READY
+  letter-spacing: 1px;
 
-          </span>
+  text-transform: uppercase;
 
-        </div>
+  transition:
+    color 0.25s ease;
+}
 
 
-        <div class="floating-card card-3">
+.nav-links a::after {
 
-          <p>
-            AUTOMATION
-          </p>
+  content: "";
 
-          <span>
+  position: absolute;
 
-            <i></i>
+  left: 0;
 
-            RUNNING
+  bottom: -10px;
 
-          </span>
+  width: 0;
 
-        </div>
+  height: 2px;
 
+  border-radius: 10px;
 
-      </div>
+  background:
+    var(--accent);
 
+  transition:
+    width 0.25s ease;
+}
 
-    </section>
 
+.nav-links a:hover,
+.nav-links a.active {
 
+  color:
+    var(--accent-dark);
+}
 
-    <!-- =====================================================
-         PROJECTS
-         ===================================================== -->
 
-    <section
-      id="projects"
-      class="section container"
-    >
+.nav-links a:hover::after,
+.nav-links a.active::after {
 
+  width: 100%;
+}
 
-      <div class="section-top">
 
-        <div>
+/* =========================================================
+   HERO
+   ========================================================= */
 
-          <p class="section-number">
-            01
-          </p>
+.hero {
 
-          <p class="section-label">
-            FEATURED PROJECTS
-          </p>
+  position: relative;
 
-        </div>
+  min-height:
+    calc(100vh - 82px);
 
+  display: grid;
 
-        <a
-          href="https://github.com/ahmed328123"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="section-link"
-        >
-          VIEW ALL WORK →
-        </a>
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1.1fr);
 
-      </div>
+  align-items: center;
 
+  gap: 35px;
 
+  padding-top: 42px;
 
-      <h2 class="section-title">
-        QA Case Studies
-      </h2>
+  padding-bottom: 52px;
+}
 
 
+.hero-left {
 
-      <div class="projects-grid">
+  position: relative;
 
+  z-index: 3;
 
+  max-width: 720px;
+}
 
-        <!-- =================================================
-             SHOPMATE
-             ================================================= -->
 
-        <article class="project-card">
+/* Status */
 
+.status {
 
-          <div class="project-image">
+  display: flex;
 
-            <img
-              src="./assets/images/shopmate-cover.png"
-              alt="ShopMate e-commerce QA project interface"
-            />
+  align-items: center;
 
-          </div>
+  gap: 11px;
 
+  margin-bottom: 25px;
 
+  color:
+    var(--accent-dark);
 
-          <div class="project-content">
+  font-family:
+    var(--font-mono);
 
+  font-size: 12px;
 
-            <span class="project-index">
-              01
-            </span>
+  font-weight: 700;
 
+  letter-spacing: 2px;
+}
 
-            <h3>
-              ShopMate QA
-            </h3>
 
+.dot {
 
-            <p>
-              Complete e-commerce QA project combining
-              structured Manual Testing with Playwright-based
-              Automation Testing.
-            </p>
+  width: 9px;
 
+  height: 9px;
 
+  border-radius: 50%;
 
-            <!-- Testing Types -->
+  background:
+    var(--accent);
 
-            <div class="testing-types">
+  box-shadow:
 
-              <span class="testing-type manual">
-                Manual Testing
-              </span>
+    0 0 0 5px
+    rgba(20, 184, 154, 0.08),
 
-              <span class="testing-type automation">
-                Automation Testing
-              </span>
+    0 0 18px
+    rgba(20, 184, 154, 0.35);
 
-            </div>
+  animation:
+    pulse 2s ease-in-out infinite;
+}
 
 
+@keyframes pulse {
 
-            <!-- Technologies -->
+  0%,
+  100% {
 
-            <div class="tags">
+    transform:
+      scale(1);
 
-              <span>
-                Test Cases
-              </span>
+    opacity: 1;
+  }
 
-              <span>
-                Bug Reports
-              </span>
+  50% {
 
-              <span>
-                Playwright
-              </span>
+    transform:
+      scale(0.75);
 
-              <span>
-                TypeScript
-              </span>
+    opacity: 0.5;
+  }
+}
 
-              <span>
-                POM
-              </span>
 
-              <span>
-                GitHub Actions
-              </span>
+/* =========================================================
+   HERO TITLE
+   ========================================================= */
 
-            </div>
+.hero-title {
 
+  margin-bottom: 29px;
 
+  white-space: nowrap;
 
-            <a
-              href="https://github.com/ahmed328123/shopmate-qa-playwright-typescript"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="project-link"
-            >
-              VIEW CASE STUDY ↗
-            </a>
+  color:
+    var(--text);
 
+  font-family:
+    var(--font-title);
 
-          </div>
+  font-size:
+    clamp(3.8rem, 5.1vw, 6.25rem);
 
+  font-weight: 700;
 
-        </article>
+  line-height: 0.92;
 
+  letter-spacing: -5px;
+}
 
 
-        <!-- =================================================
-             SHOPSPHERE
-             ================================================= -->
+.hero-subtitle {
 
-        <article class="project-card">
+  margin-bottom: 20px;
 
+  color:
+    var(--accent-dark);
 
-          <div class="project-image">
+  font-family:
+    var(--font-title);
 
-            <img
-              src="./assets/images/shopsphere-cover.png"
-              alt="ShopSphere Selenium Java automation framework interface"
-            />
+  font-size:
+    clamp(1.15rem, 1.55vw, 1.7rem);
 
-          </div>
+  font-weight: 700;
 
+  line-height: 1.35;
 
+  letter-spacing: 0.6px;
+}
 
-          <div class="project-content">
 
+.hero-text {
 
-            <span class="project-index">
-              02
-            </span>
+  max-width: 610px;
 
+  margin-bottom: 23px;
 
-            <h3>
-              ShopSphere Automation Framework
-            </h3>
+  color:
+    var(--text-soft);
 
+  font-size: 16px;
 
-            <p>
-              Comprehensive Automation Testing framework
-              covering Web UI, REST API and database validation
-              with continuous integration.
-            </p>
+  line-height: 1.72;
+}
 
 
+/* =========================================================
+   HERO STACK
+   ========================================================= */
 
-            <!-- Testing Type -->
+.hero-stack {
 
-            <div class="testing-types">
+  display: flex;
 
-              <span class="testing-type automation">
-                Automation Testing
-              </span>
+  flex-wrap: wrap;
 
-            </div>
+  gap:
+    11px 25px;
 
+  margin-bottom: 30px;
+}
 
 
-            <!-- Technologies -->
+.hero-stack span {
 
-            <div class="tags">
+  position: relative;
 
-              <span>
-                Selenium
-              </span>
+  padding-left: 14px;
 
-              <span>
-                Java
-              </span>
+  color: #46545b;
 
-              <span>
-                TestNG
-              </span>
+  font-size: 14px;
 
-              <span>
-                REST Assured
-              </span>
+  font-weight: 500;
+}
 
-              <span>
-                JDBC
-              </span>
 
-              <span>
-                Jenkins
-              </span>
+.hero-stack span::before {
 
-            </div>
+  content: "";
 
+  position: absolute;
 
+  left: 0;
 
-            <a
-              href="https://github.com/ahmed328123/shopsphere-selenium-java-automation"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="project-link"
-            >
-              VIEW CASE STUDY ↗
-            </a>
+  top: 50%;
 
+  width: 5px;
 
-          </div>
+  height: 5px;
 
+  border-radius: 50%;
 
-        </article>
+  background:
+    var(--accent);
 
+  transform:
+    translateY(-50%);
+}
 
-      </div>
 
+/* =========================================================
+   BUTTONS
+   ========================================================= */
 
-    </section>
+.hero-actions {
 
+  display: flex;
 
+  flex-wrap: wrap;
 
-    <!-- =====================================================
-         EXPERIENCE / SKILLS / CERTIFICATIONS
-         ===================================================== -->
+  gap: 16px;
+}
 
-    <section class="section container info-grid">
 
+.btn {
 
+  min-height: 52px;
 
-      <!-- ===================================================
-           EXPERIENCE
-           =================================================== -->
+  display: inline-flex;
 
-      <div
-        id="experience"
-        class="info-column"
-      >
+  align-items: center;
 
+  justify-content: center;
 
-        <div class="section-top mini">
+  gap: 9px;
 
-          <div>
+  padding:
+    0 26px;
 
-            <p class="section-number">
-              02
-            </p>
+  border-radius: 7px;
 
-            <p class="section-label">
-              EXPERIENCE
-            </p>
+  cursor: pointer;
 
-          </div>
+  font-family:
+    var(--font-mono);
 
-        </div>
+  font-size: 12px;
 
+  font-weight: 700;
 
+  letter-spacing: 0.6px;
 
-        <!-- Testlio -->
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
 
-        <div class="timeline-item">
 
-          <span class="time">
-            2026 – Present
-          </span>
+.btn:hover {
 
+  transform:
+    translateY(-3px);
+}
 
-          <h3>
-            TESTLIO
-          </h3>
 
+.btn-primary {
 
-          <p class="role">
-            Software Tester (Freelance)
-          </p>
+  color: #ffffff;
 
+  border:
+    1px solid transparent;
 
-          <ul>
+  background:
+    linear-gradient(
+      135deg,
+      #18c3a1,
+      #10a989
+    );
 
-            <li>
-              Manual Software Testing
-            </li>
+  box-shadow:
+    0 12px 28px
+    rgba(20, 184, 154, 0.18);
+}
 
-            <li>
-              Payment Testing
-            </li>
 
-            <li>
-              Accessibility Testing
-            </li>
+.btn-primary:hover {
 
-            <li>
-              Bug Reporting & Documentation
-            </li>
+  box-shadow:
+    0 16px 35px
+    rgba(20, 184, 154, 0.27);
+}
 
-          </ul>
 
-        </div>
+.btn-secondary {
 
+  color:
+    var(--text);
 
+  border:
+    1px solid #ccd8da;
 
-        <!-- Demag -->
+  background:
+    rgba(255, 255, 255, 0.86);
+}
 
-        <div class="timeline-item">
 
-          <span class="time">
-            2023 – 2025
-          </span>
+.btn-secondary:hover {
 
+  color:
+    var(--accent-dark);
 
-          <h3>
-            DEMAG Cranes & Components
-          </h3>
+  border-color:
+    rgba(20, 184, 154, 0.38);
 
+  background:
+    #ffffff;
 
-          <p class="role">
-            Embedded Solutions Development
-          </p>
+  box-shadow:
+    0 12px 28px
+    rgba(32, 55, 61, 0.07);
+}
 
 
-          <ul>
+/* =========================================================
+   HERO RIGHT
+   ========================================================= */
 
-            <li>
-              Software Testing
-            </li>
+.hero-right {
 
-            <li>
-              Robot Framework / Python
-            </li>
+  position: relative;
 
-            <li>
-              Hardware & Software Validation
-            </li>
+  min-height: 620px;
 
-            <li>
-              Jira / Zephyr / Git
-            </li>
+  display: flex;
 
-          </ul>
+  align-items: center;
 
-        </div>
+  justify-content: center;
 
+  perspective: 1200px;
+}
 
-      </div>
 
+/* =========================================================
+   TECHNICAL MESH
+   ========================================================= */
 
+.mesh-wrap {
 
-      <!-- ===================================================
-           SKILLS
-           =================================================== -->
+  position: relative;
 
-      <div
-        id="skills"
-        class="info-column"
-      >
+  width:
+    min(570px, 72vw);
 
+  aspect-ratio: 1;
 
-        <div class="section-top mini">
+  display: flex;
 
-          <div>
+  align-items: center;
 
-            <p class="section-number">
-              03
-            </p>
+  justify-content: center;
 
-            <p class="section-label">
-              SKILLS
-            </p>
+  animation:
+    floating 7s ease-in-out infinite;
+}
 
-          </div>
 
-        </div>
+.mesh-wrap::after {
 
+  content: "";
 
+  position: absolute;
 
-        <div class="skills-boxes">
+  left: 50%;
 
+  top: 50%;
 
+  width: 58%;
 
-          <!-- Manual Testing -->
+  aspect-ratio: 1;
 
-          <div class="skill-box testing-focus">
+  transform:
+    translate(-50%, -50%);
 
-            <h3>
-              Manual Testing
-            </h3>
+  border-radius: 50%;
 
-            <p>
-              Functional Testing<br />
-              Regression Testing<br />
-              End-to-End Testing<br />
-              Accessibility Testing<br />
-              Test Case Design<br />
-              Bug Reporting
-            </p>
+  pointer-events: none;
 
-          </div>
+  background:
+    radial-gradient(
+      circle,
+      rgba(20, 184, 154, 0.14) 0%,
+      rgba(20, 184, 154, 0.055) 42%,
+      transparent 72%
+    );
 
+  filter:
+    blur(14px);
+}
 
 
-          <!-- Automation -->
+@keyframes floating {
 
-          <div class="skill-box">
+  0%,
+  100% {
 
-            <h3>
-              Automation Testing
-            </h3>
+    transform:
+      translateY(0);
+  }
 
-            <p>
-              Playwright<br />
-              Selenium WebDriver<br />
-              Robot Framework<br />
-              TestNG<br />
-              Cucumber<br />
-              Page Object Model
-            </p>
+  50% {
 
-          </div>
+    transform:
+      translateY(-13px);
+  }
+}
 
 
+.mesh-core {
 
-          <!-- API / Database -->
+  position: absolute;
 
-          <div class="skill-box">
+  width: 74%;
 
-            <h3>
-              API / Database
-            </h3>
+  height: 74%;
 
-            <p>
-              Postman<br />
-              REST Assured<br />
-              JDBC<br />
-              SQL<br />
-              H2 Database
-            </p>
+  border:
+    1px solid
+    rgba(20, 184, 154, 0.62);
 
-          </div>
+  border-radius:
+    45% 55% 52% 48%
+    /
+    54% 44% 56% 46%;
 
+  background:
 
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      transparent 0,
+      transparent 8px,
+      rgba(20, 184, 154, 0.135) 9px,
+      transparent 10px
+    ),
 
-          <!-- Tools -->
+    repeating-linear-gradient(
+      35deg,
+      transparent 0,
+      transparent 11px,
+      rgba(20, 184, 154, 0.105) 12px,
+      transparent 13px
+    );
 
-          <div class="skill-box">
+  box-shadow:
 
-            <h3>
-              Tools / CI-CD
-            </h3>
+    inset 0 0 60px
+    rgba(20, 184, 154, 0.065),
 
-            <p>
-              Jira<br />
-              Zephyr<br />
-              Jenkins<br />
-              Git & GitHub<br />
-              GitHub Actions
-            </p>
+    0 0 75px
+    rgba(20, 184, 154, 0.085);
 
-          </div>
+  animation:
+    morph 10s ease-in-out infinite,
+    rotateCore 18s linear infinite;
+}
 
 
-        </div>
+.mesh-core::before,
+.mesh-core::after {
 
+  content: "";
 
-      </div>
+  position: absolute;
 
+  inset: 10%;
 
+  border:
+    1px solid
+    rgba(20, 184, 154, 0.27);
 
-      <!-- ===================================================
-           CERTIFICATIONS
-           =================================================== -->
+  border-radius:
+    60% 40% 45% 55%
+    /
+    45% 60% 40% 55%;
+}
 
-      <div
-        id="certifications"
-        class="info-column"
-      >
 
+.mesh-core::before {
 
-        <div class="section-top mini">
+  animation:
+    rotateCoreReverse 13s linear infinite;
+}
 
-          <div>
 
-            <p class="section-number">
-              04
-            </p>
+.mesh-core::after {
 
-            <p class="section-label">
-              CERTIFICATIONS
-            </p>
+  inset: 20%;
 
-          </div>
+  animation:
+    rotateCore 10s linear infinite;
+}
 
-        </div>
 
+@keyframes morph {
 
+  0%,
+  100% {
 
-        <!-- CTFL -->
+    border-radius:
+      45% 55% 52% 48%
+      /
+      54% 44% 56% 46%;
 
-        <div class="cert-card">
+    transform:
+      rotateX(4deg)
+      rotateY(-6deg)
+      scale(1);
+  }
 
-          <h3>
-            Certified Tester Foundation Level
-          </h3>
+  50% {
 
-          <p>
-            CTFL v4
-          </p>
+    border-radius:
+      58% 42% 40% 60%
+      /
+      41% 59% 45% 55%;
 
-          <a
-            href="https://atsqa.org/certified-testers/profile/50f4b5ab74a24242892d9b220a066ed3"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            VERIFY ↗
-          </a>
+    transform:
+      rotateX(-6deg)
+      rotateY(7deg)
+      scale(1.04);
+  }
+}
 
-        </div>
 
+@keyframes rotateCore {
 
+  from {
+    rotate: 0deg;
+  }
 
-        <!-- CT GenAI -->
+  to {
+    rotate: 360deg;
+  }
+}
 
-        <div class="cert-card">
 
-          <h3>
-            Testing with Generative AI
-          </h3>
+@keyframes rotateCoreReverse {
 
-          <p>
-            CT-GenAI
-          </p>
+  from {
+    rotate: 360deg;
+  }
 
-          <a
-            href="https://atsqa.org/certified-testers/profile/50f4b5ab74a24242892d9b220a066ed3"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            VERIFY ↗
-          </a>
+  to {
+    rotate: 0deg;
+  }
+}
 
-        </div>
 
+/* =========================================================
+   ORBITS
+   ========================================================= */
 
-      </div>
+.orbit {
 
+  position: absolute;
 
-    </section>
+  border:
+    1px dashed
+    rgba(20, 184, 154, 0.42);
 
+  border-radius: 50%;
+}
 
 
-    <!-- =====================================================
-         LANGUAGES
-         ===================================================== -->
+.orbit::before {
 
-    <section
-      id="languages"
-      class="section container languages-section"
-    >
+  content: "";
 
+  position: absolute;
 
-      <div class="section-top">
+  width: 8px;
 
-        <div>
+  height: 8px;
 
-          <p class="section-number">
-            05
-          </p>
+  border-radius: 50%;
 
-          <p class="section-label">
-            LANGUAGES
-          </p>
+  background:
+    var(--accent);
 
-        </div>
+  box-shadow:
+    0 0 15px
+    rgba(20, 184, 154, 0.55);
+}
 
-      </div>
 
+.orbit-1 {
 
+  width: 94%;
 
-      <h2 class="section-title">
-        Communication
-      </h2>
+  height: 52%;
 
+  transform:
+    rotate(18deg);
 
+  animation:
+    orbitSpin 14s linear infinite;
+}
 
-      <div class="languages-grid">
 
+.orbit-1::before {
 
+  right: 8%;
 
-        <!-- German -->
+  top: 17%;
+}
 
-        <article class="language-card">
 
-          <span class="language-number">
-            01
-          </span>
+.orbit-2 {
 
-          <h3>
-            German
-          </h3>
+  width: 82%;
 
-          <div class="language-level">
-            C1
-          </div>
+  height: 62%;
 
-        </article>
+  transform:
+    rotate(-28deg);
 
+  animation:
+    orbitSpinReverse 17s linear infinite;
+}
 
 
-        <!-- English -->
+.orbit-2::before {
 
-        <article class="language-card">
+  left: 2%;
 
-          <span class="language-number">
-            02
-          </span>
+  bottom: 32%;
+}
 
-          <h3>
-            English
-          </h3>
 
-          <div class="language-level">
-            C1
-          </div>
+.orbit-3 {
 
-        </article>
+  width: 63%;
 
+  height: 93%;
 
+  transform:
+    rotate(42deg);
 
-        <!-- Arabic -->
+  animation:
+    orbitSpin 20s linear infinite;
+}
 
-        <article class="language-card">
 
-          <span class="language-number">
-            03
-          </span>
+.orbit-3::before {
 
-          <h3>
-            Arabic
-          </h3>
+  right: 14%;
 
-          <div class="language-level">
-            Native
-          </div>
+  bottom: 7%;
+}
 
-        </article>
 
+@keyframes orbitSpin {
 
-      </div>
+  to {
+    transform:
+      rotate(378deg);
+  }
+}
 
 
-    </section>
+@keyframes orbitSpinReverse {
 
+  to {
+    transform:
+      rotate(-388deg);
+  }
+}
 
 
-    <!-- =====================================================
-         CONTACT
-         ===================================================== -->
+/* =========================================================
+   FLOATING QA STATUS CARDS
+   ========================================================= */
 
-    <section
-      id="contact"
-      class="section container contact-box"
-    >
+.floating-card {
 
+  position: absolute;
 
-      <div class="contact-title">
+  z-index: 5;
 
-        <h2>
+  min-width: 145px;
 
-          READY FOR THE<br />
+  padding:
+    16px 18px;
 
-          <span>
-            NEXT TEST CYCLE?
-          </span>
+  border:
+    1px solid var(--border);
 
-        </h2>
+  border-radius: 11px;
 
-      </div>
+  background:
+    rgba(255, 255, 255, 0.92);
 
+  backdrop-filter:
+    blur(14px);
 
+  -webkit-backdrop-filter:
+    blur(14px);
 
-      <div class="contact-text">
+  box-shadow:
+    0 14px 35px
+    rgba(30, 55, 60, 0.08);
 
-        <p>
-          Let’s work together to build reliable,
-          accessible and high-quality software.
-        </p>
+  animation:
+    cardFloat 5s ease-in-out infinite;
+}
 
-      </div>
 
+.floating-card p {
 
+  margin-bottom: 9px;
 
-      <div class="contact-links">
+  color:
+    #27363d;
 
+  font-family:
+    var(--font-mono);
 
+  font-size: 11px;
 
-        <!-- Email -->
+  font-weight: 700;
+}
 
-        <a
-          href="mailto:ahmedali328123@gmail.com"
-        >
 
-          Email
+.floating-card span {
 
-          <br />
+  display: flex;
 
-          <span>
-            ahmedali328123@gmail.com
-          </span>
+  align-items: center;
 
-        </a>
+  gap: 8px;
 
+  color:
+    #77858c;
 
+  font-family:
+    var(--font-mono);
 
-        <!-- LinkedIn -->
+  font-size: 10px;
+}
 
-        <a
-          href="https://www.linkedin.com/in/ahmedali328123/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
 
-          LinkedIn
+.floating-card i {
 
-          <br />
+  width: 7px;
 
-          <span>
-            /in/ahmedali328123
-          </span>
+  height: 7px;
 
-        </a>
+  border-radius: 50%;
 
+  background:
+    var(--accent);
 
+  box-shadow:
+    0 0 10px
+    rgba(20, 184, 154, 0.5);
+}
 
-        <!-- GitHub -->
 
-        <a
-          href="https://github.com/ahmed328123"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+.card-1 {
 
-          GitHub
+  top: 18%;
 
-          <br />
+  right: 4%;
+}
 
-          <span>
-            github.com/ahmed328123
-          </span>
 
-        </a>
+.card-2 {
 
+  top: 43%;
 
+  right: 0;
 
-        <!-- CV -->
+  animation-delay: -1.5s;
+}
 
-        <a
-          href="./assets/cv-en.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
 
-          View CV
+.card-3 {
 
-          <br />
+  right: 9%;
 
-          <span>
-            Open PDF
-          </span>
+  bottom: 14%;
 
-        </a>
+  animation-delay: -3s;
+}
 
 
-      </div>
+@keyframes cardFloat {
 
+  0%,
+  100% {
 
-    </section>
+    transform:
+      translateY(0);
+  }
 
+  50% {
 
-  </main>
+    transform:
+      translateY(-8px);
+  }
+}
 
 
+/* =========================================================
+   SECTION HEADERS
+   ========================================================= */
 
-  <!-- =====================================================
-       FOOTER
-       ===================================================== -->
+.section-top {
 
-  <footer class="footer container">
+  display: flex;
 
-    <p>
-      © 2026 Ahmed Ali. All rights reserved.
-    </p>
+  align-items: flex-end;
 
-    <p>
-      Software QA · Manual Testing · Automation Testing
-    </p>
+  justify-content: space-between;
 
-    <a href="#">
-      BACK TO TOP ↑
-    </a>
+  gap: 25px;
+}
 
-  </footer>
 
+.section-top > div {
 
+  display: flex;
 
-  <!-- =====================================================
-       JAVASCRIPT
-       ===================================================== -->
+  align-items: center;
 
-  <script src="./script.js?v=3"></script>
+  gap: 18px;
+}
 
 
-</body>
+.section-number,
+.section-label {
 
-</html>
+  color:
+    var(--accent-dark);
+
+  font-family:
+    var(--font-mono);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.7px;
+}
+
+
+.section-number {
+  opacity: 0.72;
+}
+
+
+.section-title {
+
+  margin-top: 14px;
+
+  margin-bottom: 42px;
+
+  color:
+    var(--text);
+
+  font-family:
+    var(--font-title);
+
+  font-size:
+    clamp(2.1rem, 4vw, 3.6rem);
+
+  letter-spacing: -1.5px;
+}
+
+
+.section-link,
+.project-link {
+
+  color:
+    var(--accent-dark);
+
+  font-family:
+    var(--font-mono);
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.section-link:hover {
+
+  color:
+    var(--accent);
+}
+
+
+.project-link:hover {
+
+  color:
+    var(--accent);
+
+  transform:
+    translateX(3px);
+}
+
+
+/* =========================================================
+   PROJECTS
+   ========================================================= */
+
+#projects {
+
+  padding-top: 92px;
+
+  padding-bottom: 105px;
+}
+
+
+#projects .section-title {
+
+  margin-top: 12px;
+
+  margin-bottom: 32px;
+
+  font-size:
+    clamp(2.25rem, 3.2vw, 3rem);
+}
+
+
+.projects-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 24px;
+
+  align-items: stretch;
+}
+
+
+/* Card */
+
+.project-card {
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 0;
+
+  overflow: hidden;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 14px;
+
+  background:
+    var(--surface);
+
+  box-shadow:
+    var(--shadow);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.project-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  z-index: 4;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 2px;
+
+  opacity: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--accent),
+      transparent
+    );
+
+  transition:
+    opacity 0.35s ease;
+
+  pointer-events: none;
+}
+
+
+.project-card:hover {
+
+  border-color:
+    rgba(20, 184, 154, 0.28);
+
+  box-shadow:
+    var(--shadow-hover);
+}
+
+
+.project-card:hover::before {
+
+  opacity: 1;
+}
+
+
+/* Screenshot */
+
+.project-image {
+
+  position: relative;
+
+  width: 100%;
+
+  height:
+    clamp(280px, 21vw, 340px);
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border-bottom:
+    1px solid var(--border);
+
+  background:
+    #ffffff;
+}
+
+
+.project-image::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 75%,
+      rgba(16, 24, 32, 0.035)
+    );
+}
+
+
+.project-image img {
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition:
+    transform 0.65s
+    cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+
+.project-card:hover
+.project-image img {
+
+  transform:
+    scale(1.025);
+}
+
+
+/* Content */
+
+.project-content {
+
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding:
+    22px 24px 24px;
+}
+
+
+.project-index {
+
+  margin-bottom: 12px;
+
+  color:
+    var(--accent-dark);
+
+  font-family:
+    var(--font-mono);
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+.project-content h3 {
+
+  margin-bottom: 8px;
+
+  color:
+    var(--text);
+
+  font-family:
+    var(--font-title);
+
+  font-size:
+    clamp(1.25rem, 1.7vw, 1.45rem);
+
+  line-height: 1.25;
+
+  letter-spacing: -0.4px;
+}
+
+
+.project-content > p {
+
+  max-width: 95%;
+
+  margin-bottom: 14px;
+
+  color:
+    var(--text-soft);
+
+  font-size: 12.5px;
+
+  line-height: 1.65;
+}
+
+
+.project-link {
+
+  align-self: flex-start;
+
+  margin-top: auto;
+
+  padding-top: 4px;
+}
+
+
+/* =========================================================
+   TESTING TYPE BADGES
+   ========================================================= */
+
+.testing-types {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  margin-bottom: 13px;
+}
+
+
+.testing-type {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding:
+    6px 10px;
+
+  border-radius: 5px;
+
+  font-family:
+    var(--font-mono);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.4px;
+}
+
+
+.testing-type::before {
+
+  content: "";
+
+  width: 6px;
+
+  height: 6px;
+
+  border-radius: 50%;
+}
+
+
+.testing-type.manual {
+
+  color: #326fc8;
+
+  border:
+    1px solid
+    rgba(63, 126, 232, 0.22);
+
+  background:
+    rgba(63, 126, 232, 0.065);
+}
+
+
+.testing-type.manual::before {
+
+  background:
+    var(--blue);
+}
+
+
+.testing-type.automation {
+
+  color:
+    var(--accent-dark);
+
+  border:
+    1px solid
+    rgba(20, 184, 154, 0.27);
+
+  background:
+    var(--accent-soft);
+}
+
+
+.testing-type.automation::before {
+
+  background:
+    var(--accent);
+}
+
+
+/* =========================================================
+   PROJECT TAGS
+   ========================================================= */
+
+.tags {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-bottom: 18px;
+}
+
+
+.tags span {
+
+  padding:
+    5px 8px;
+
+  color: #55646b;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 5px;
+
+  background:
+    #f8fafa;
+
+  font-size: 9.5px;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.tags span:hover {
+
+  color:
+    var(--accent-dark);
+
+  border-color:
+    rgba(20, 184, 154, 0.25);
+
+  background:
+    var(--accent-soft);
+}
+
+
+/* =========================================================
+   EXPERIENCE / SKILLS / CERTIFICATIONS
+   ========================================================= */
+
+.info-grid {
+
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.96fr)
+    minmax(0, 1.12fr)
+    minmax(0, 0.96fr);
+
+  padding-top: 0;
+
+  padding-bottom: 0;
+
+  border-top:
+    1px solid var(--border);
+}
+
+
+.info-grid::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 33%;
+
+  width: 34%;
+
+  height: 180px;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at top,
+      rgba(20, 184, 154, 0.065),
+      transparent 70%
+    );
+}
+
+
+.info-column {
+
+  position: relative;
+
+  min-width: 0;
+
+  padding:
+    64px 34px 72px;
+
+  border-right:
+    1px solid var(--border);
+}
+
+
+.info-column:first-child {
+
+  padding-left: 0;
+}
+
+
+.info-column:last-child {
+
+  padding-right: 0;
+
+  border-right: none;
+}
+
+
+.info-grid
+.section-number {
+
+  font-size: 11px;
+}
+
+
+.info-grid
+.section-label {
+
+  font-size: 13px;
+
+  letter-spacing: 2.1px;
+}
+
+
+.section-top.mini {
+
+  margin-bottom: 34px;
+}
+
+
+/* =========================================================
+   EXPERIENCE
+   ========================================================= */
+
+.timeline-item {
+
+  position: relative;
+
+  margin-left: 7px;
+
+  padding-left: 29px;
+
+  padding-bottom: 42px;
+
+  border-left:
+    1px solid
+    rgba(20, 184, 154, 0.34);
+}
+
+
+.timeline-item::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: -5px;
+
+  top: 5px;
+
+  width: 9px;
+
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  border:
+    2px solid
+    var(--accent);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(20, 184, 154, 0.08);
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.timeline-item:hover::before {
+
+  background:
+    var(--accent);
+
+  box-shadow:
+
+    0 0 0 5px
+    rgba(20, 184, 154, 0.09),
+
+    0 0 18px
+    rgba(20, 184, 154, 0.22);
+}
+
+
+.timeline-item:last-child {
+
+  padding-bottom: 0;
+}
+
+
+.time {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 23px;
+
+  margin-bottom: 10px;
+
+  padding:
+    0 8px;
+
+  color: #69777e;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 4px;
+
+  background:
+    rgba(255, 255, 255, 0.75);
+
+  font-family:
+    var(--font-mono);
+
+  font-size: 9px;
+
+  font-weight: 500;
+}
+
+
+.timeline-item h3 {
+
+  margin-bottom: 6px;
+
+  color:
+    var(--text);
+
+  font-family:
+    var(--font-title);
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  letter-spacing: -0.35px;
+}
+
+
+.role {
+
+  margin-bottom: 13px;
+
+  color:
+    var(--accent-dark);
+
+  font-size: 11.5px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+}
+
+
+.timeline-item ul {
+
+  padding-left: 17px;
+
+  color:
+    var(--text-soft);
+
+  font-size: 11.5px;
+
+  line-height: 1.8;
+}
+
+
+.timeline-item li::marker {
+
+  color:
+    var(--accent);
+}
+
+
+/* =========================================================
+   SKILLS
+   ========================================================= */
+
+.skills-boxes {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+
+.skill-box {
+
+  position: relative;
+
+  min-height: 168px;
+
+  overflow: hidden;
+
+  padding:
+    18px 19px 17px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 9px;
+
+  background:
+    rgba(255, 255, 255, 0.76);
+
+  box-shadow:
+    0 8px 25px
+    rgba(31, 51, 57, 0.035);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.skill-box::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 19px;
+
+  right: 19px;
+
+  bottom: 0;
+
+  height: 2px;
+
+  opacity: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--accent),
+      transparent
+    );
+
+  transition:
+    opacity 0.3s ease;
+}
+
+
+.skill-box:hover {
+
+  transform:
+    translateY(-3px);
+
+  border-color:
+    rgba(20, 184, 154, 0.25);
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 14px 32px
+    rgba(31, 51, 57, 0.075);
+}
+
+
+.skill-box:hover::after {
+
+  opacity: 0.75;
+}
+
+
+.skill-box h3 {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 12px;
+
+  color:
+    var(--text);
+
+  font-size: 13.5px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+
+.skill-box h3::before {
+
+  content: "";
+
+  width: 13px;
+
+  height: 2px;
+
+  flex-shrink: 0;
+
+  border-radius: 4px;
+
+  background:
+    var(--accent);
+}
+
+
+.skill-box p {
+
+  color:
+    var(--text-soft);
+
+  font-size: 10.8px;
+
+  line-height: 1.75;
+}
+
+
+.skill-box.testing-focus {
+
+  border-color:
+    rgba(20, 184, 154, 0.22);
+
+  background:
+    var(--accent-soft);
+}
+
+
+.skill-box.testing-focus h3 {
+
+  color:
+    var(--accent-dark);
+}
+
+
+/* =========================================================
+   CERTIFICATIONS
+   ========================================================= */
+
+.cert-card {
+
+  position: relative;
+
+  min-height: 166px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  overflow: hidden;
+
+  margin-bottom: 12px;
+
+  padding:
+    19px 20px 18px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 10px;
+
+  background:
+    rgba(255, 255, 255, 0.82);
+
+  box-shadow:
+    0 8px 25px
+    rgba(31, 51, 57, 0.04);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.cert-card::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  width: 3px;
+
+  height: 0;
+
+  background:
+    var(--accent);
+
+  transition:
+    height 0.35s ease;
+}
+
+
+.cert-card:hover {
+
+  transform:
+    translateX(3px);
+
+  border-color:
+    rgba(20, 184, 154, 0.27);
+
+  box-shadow:
+    0 14px 32px
+    rgba(31, 51, 57, 0.075);
+}
+
+
+.cert-card:hover::after {
+
+  height: 100%;
+}
+
+
+.cert-card::before {
+
+  content: "ISTQB®";
+
+  display: block;
+
+  margin-bottom: 12px;
+
+  color:
+    #26353c;
+
+  font-family:
+    var(--font-title);
+
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+
+.cert-card h3 {
+
+  margin-bottom: 5px;
+
+  color:
+    var(--text);
+
+  font-family:
+    var(--font-title);
+
+  font-size: 13.5px;
+
+  line-height: 1.4;
+}
+
+
+.cert-card p {
+
+  margin-bottom: 13px;
+
+  color:
+    #6d7a81;
+
+  font-family:
+    var(--font-mono);
+
+  font-size: 9.5px;
+}
+
+
+.cert-card a {
+
+  width: fit-content;
+
+  min-height: 31px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-top: auto;
+
+  padding:
+    0 10px;
+
+  color:
+    var(--accent-dark);
+
+  border:
+    1px solid
+    rgba(20, 184, 154, 0.32);
+
+  border-radius: 5px;
+
+  background:
+    var(--accent-soft);
+
+  font-family:
+    var(--font-mono);
+
+  font-size: 8.5px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+
+.cert-card a:hover {
+
+  color: #ffffff;
+
+  background:
+    var(--accent);
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================================
+   LANGUAGES
+   ========================================================= */
+
+.languages-section {
+
+  position: relative;
+
+  padding-top: 82px;
+
+  padding-bottom: 82px;
+}
+
+
+.languages-section
+.section-title {
+
+  margin-top: 12px;
+
+  margin-bottom: 30px;
+
+  font-size:
+    clamp(2rem, 3.2vw, 3rem);
+}
+
+
+.languages-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-top: 30px;
+}
+
+
+.language-card {
+
+  position: relative;
+
+  min-height: 138px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  padding:
+    24px 26px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 11px;
+
+  background:
+    rgba(255, 255, 255, 0.8);
+
+  box-shadow:
+    0 10px 28px
+    rgba(31, 51, 57, 0.045);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.language-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 120px;
+
+  height: 120px;
+
+  top: -72px;
+
+  right: -48px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(20, 184, 154, 0.13),
+      transparent 68%
+    );
+
+  pointer-events: none;
+}
+
+
+.language-card:hover {
+
+  transform:
+    translateY(-4px);
+
+  border-color:
+    rgba(20, 184, 154, 0.3);
+
+  box-shadow:
+    0 15px 36px
+    rgba(31, 51, 57, 0.075);
+}
+
+
+.language-number {
+
+  color:
+    var(--text-muted);
+
+  font-family:
+    var(--font-mono);
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+}
+
+
+.language-card h3 {
+
+  margin-top: 20px;
+
+  color:
+    var(--text);
+
+  font-family:
+    var(--font-title);
+
+  font-size: 22px;
+
+  letter-spacing: -0.45px;
+}
+
+
+.language-level {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 12px;
+
+  color:
+    var(--accent-dark);
+
+  font-family:
+    var(--font-mono);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+.language-level::after {
+
+  content: "●";
+
+  color:
+    var(--accent);
+
+  font-size: 7px;
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.contact-box {
+
+  display: grid;
+
+  grid-template-columns:
+    1.3fr
+    0.7fr
+    1.3fr;
+
+  align-items: center;
+
+  gap: 38px;
+
+  margin-top: 90px;
+
+  margin-bottom: 35px;
+
+  padding: 38px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 14px;
+
+  background:
+    rgba(255, 255, 255, 0.86);
+
+  box-shadow:
+    var(--shadow);
+}
+
+
+.contact-title h2 {
+
+  color:
+    var(--text);
+
+  font-family:
+    var(--font-title);
+
+  font-size:
+    clamp(2rem, 3vw, 3.2rem);
+
+  line-height: 1.05;
+
+  letter-spacing: -1px;
+}
+
+
+.contact-title span {
+
+  color:
+    var(--accent-dark);
+}
+
+
+.contact-text {
+
+  padding-left: 30px;
+
+  border-left:
+    1px solid var(--border);
+}
+
+
+.contact-text p {
+
+  color:
+    var(--text-soft);
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+
+.contact-links {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+
+.contact-links a {
+
+  color:
+    var(--text);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.contact-links a:hover {
+
+  color:
+    var(--accent-dark);
+
+  transform:
+    translateX(3px);
+}
+
+
+.contact-links span {
+
+  display: inline-block;
+
+  margin-top: 4px;
+
+  color:
+    var(--text-muted);
+
+  font-size: 10px;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+
+  min-height: 85px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-top:
+    1px solid var(--border);
+
+  color:
+    var(--text-muted);
+
+  font-family:
+    var(--font-mono);
+
+  font-size: 9px;
+
+  letter-spacing: 0.5px;
+}
+
+
+.footer a {
+
+  color:
+    var(--text-soft);
+
+  transition:
+    color 0.2s ease;
+}
+
+
+.footer a:hover {
+
+  color:
+    var(--accent-dark);
+}
+
+
+/* =========================================================
+   REVEAL
+   ========================================================= */
+
+.reveal {
+
+  opacity: 0;
+
+  transform:
+    translateY(25px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+
+.reveal.visible {
+
+  opacity: 1;
+
+  transform:
+    translateY(0);
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+
+  width: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+
+  background:
+    #edf3f3;
+}
+
+
+::-webkit-scrollbar-thumb {
+
+  border-radius: 10px;
+
+  background:
+    #becbcc;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+  background:
+    #9daeb0;
+}
+
+
+/* =========================================================
+   SHORT DESKTOP SCREENS
+   ========================================================= */
+
+@media
+(min-width: 821px)
+and
+(max-height: 900px) {
+
+  .hero {
+
+    padding-top: 28px;
+
+    padding-bottom: 36px;
+  }
+
+
+  .status {
+
+    margin-bottom: 18px;
+  }
+
+
+  .hero-title {
+
+    margin-bottom: 22px;
+
+    font-size:
+      clamp(3.6rem, 4.8vw, 5.7rem);
+  }
+
+
+  .hero-subtitle {
+
+    margin-bottom: 16px;
+  }
+
+
+  .hero-text {
+
+    margin-bottom: 18px;
+  }
+
+
+  .hero-stack {
+
+    margin-bottom: 22px;
+  }
+
+
+  .hero-right {
+
+    min-height: 540px;
+  }
+
+
+  .info-column {
+
+    padding-top: 58px;
+
+    padding-bottom: 64px;
+  }
+}
+
+
+/* =========================================================
+   1250PX
+   ========================================================= */
+
+@media (max-width: 1250px) {
+
+  .nav-links {
+
+    gap: 24px;
+  }
+
+
+  .nav-links a {
+
+    font-size: 11px;
+  }
+
+
+  .hero-title {
+
+    font-size:
+      clamp(3.4rem, 4.8vw, 5rem);
+
+    letter-spacing: -4px;
+  }
+
+
+  .project-image {
+
+    height:
+      clamp(270px, 23vw, 320px);
+  }
+
+
+  .info-column {
+
+    padding-left: 25px;
+
+    padding-right: 25px;
+  }
+}
+
+
+/* =========================================================
+   1100PX
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .hero {
+
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+
+  .hero-title {
+
+    font-size:
+      clamp(3rem, 4.7vw, 4.3rem);
+
+    letter-spacing: -3.4px;
+  }
+
+
+  .hero-right {
+
+    min-height: 520px;
+  }
+
+
+  .project-content {
+
+    padding: 20px;
+  }
+
+
+  .project-content h3 {
+
+    font-size: 20px;
+  }
+
+
+  /* Info */
+
+  .info-grid {
+
+    grid-template-columns: 1fr;
+  }
+
+
+  .info-grid::before {
+
+    display: none;
+  }
+
+
+  .info-column,
+  .info-column:first-child,
+  .info-column:last-child {
+
+    padding:
+      58px 0;
+
+    border-right: none;
+
+    border-bottom:
+      1px solid var(--border);
+  }
+
+
+  .info-column:last-child {
+
+    border-bottom: none;
+  }
+
+
+  .skills-boxes {
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  #certifications {
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+  }
+
+
+  #certifications
+  .section-top {
+
+    grid-column:
+      1 / -1;
+  }
+
+
+  .cert-card {
+
+    margin-bottom: 0;
+  }
+
+
+  /* Contact */
+
+  .contact-box {
+
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+
+  .contact-links {
+
+    grid-column:
+      1 / -1;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 820px) {
+
+  #projects,
+  #experience,
+  #skills,
+  #certifications,
+  #languages,
+  #contact {
+
+    scroll-margin-top: 30px;
+  }
+
+
+  /* Navbar */
+
+  .navbar {
+
+    position: relative;
+  }
+
+
+  .nav-inner {
+
+    min-height: 72px;
+  }
+
+
+  .nav-links {
+
+    display: none;
+  }
+
+
+  /* Hero */
+
+  .hero {
+
+    min-height: auto;
+
+    grid-template-columns:
+      1fr;
+
+    padding-top: 78px;
+
+    padding-bottom: 42px;
+  }
+
+
+  .hero-left {
+
+    max-width: 100%;
+  }
+
+
+  .hero-title {
+
+    font-size:
+      clamp(3rem, 11vw, 5rem);
+
+    letter-spacing: -4px;
+  }
+
+
+  .hero-right {
+
+    min-height: 520px;
+  }
+
+
+  /* Projects */
+
+  #projects {
+
+    padding-top: 80px;
+
+    padding-bottom: 85px;
+  }
+
+
+  .projects-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 28px;
+  }
+
+
+  .project-image {
+
+    height: auto;
+
+    aspect-ratio:
+      16 / 9;
+  }
+
+
+  .project-content {
+
+    padding: 24px;
+  }
+
+
+  /* Skills */
+
+  .skills-boxes {
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  #certifications {
+
+    grid-template-columns:
+      1fr;
+  }
+
+
+  /* Languages */
+
+  .languages-grid {
+
+    grid-template-columns:
+      1fr;
+  }
+
+
+  /* Contact */
+
+  .contact-box {
+
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .contact-text {
+
+    padding-left: 0;
+
+    padding-top: 20px;
+
+    border-left: none;
+
+    border-top:
+      1px solid var(--border);
+  }
+
+
+  .contact-links {
+
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+
+  /* Footer */
+
+  .footer {
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding:
+      30px 0;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+  .container {
+
+    width: 90%;
+  }
+
+
+  .section {
+
+    padding:
+      75px 0;
+  }
+
+
+  /* Logo */
+
+  .logo {
+
+    font-size: 19px;
+  }
+
+
+  /* Hero */
+
+  .hero {
+
+    padding-top: 60px;
+
+    padding-bottom: 30px;
+  }
+
+
+  .status {
+
+    font-size: 10px;
+
+    letter-spacing: 1.3px;
+  }
+
+
+  .hero-title {
+
+    white-space: nowrap;
+
+    font-size:
+      clamp(2.35rem, 11.5vw, 3.5rem);
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+  }
+
+
+  .hero-subtitle {
+
+    font-size: 1rem;
+  }
+
+
+  .hero-text {
+
+    font-size: 14px;
+  }
+
+
+  .hero-stack {
+
+    gap:
+      10px 18px;
+  }
+
+
+  .hero-stack span {
+
+    font-size: 12px;
+  }
+
+
+  /* Buttons */
+
+  .hero-actions {
+
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+
+  .hero-actions
+  .btn {
+
+    width: 100%;
+  }
+
+
+  /* Hero visual */
+
+  .hero-right {
+
+    min-height: 410px;
+  }
+
+
+  .mesh-wrap {
+
+    width: 380px;
+  }
+
+
+  .floating-card {
+
+    min-width: 112px;
+
+    padding: 12px;
+  }
+
+
+  .floating-card p {
+
+    font-size: 9px;
+  }
+
+
+  .floating-card span {
+
+    font-size: 8px;
+  }
+
+
+  .card-1 {
+
+    right: -1%;
+  }
+
+
+  .card-2 {
+
+    right: -4%;
+  }
+
+
+  .card-3 {
+
+    right: 1%;
+  }
+
+
+  /* Section headers */
+
+  .section-top {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  /* Projects */
+
+  #projects
+  .section-title {
+
+    margin-bottom: 28px;
+
+    font-size: 2.25rem;
+  }
+
+
+  .project-card {
+
+    border-radius: 11px;
+  }
+
+
+  .project-image {
+
+    aspect-ratio:
+      16 / 9;
+  }
+
+
+  .project-content {
+
+    padding: 20px;
+  }
+
+
+  .project-content h3 {
+
+    font-size: 20px;
+  }
+
+
+  .project-content > p {
+
+    max-width: 100%;
+
+    font-size: 12px;
+  }
+
+
+  /* Experience */
+
+  .timeline-item {
+
+    padding-left: 24px;
+  }
+
+
+  /* Skills */
+
+  .skills-boxes {
+
+    grid-template-columns: 1fr;
+  }
+
+
+  .skill-box {
+
+    min-height: auto;
+  }
+
+
+  /* Testing badges */
+
+  .testing-types {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  /* Certifications */
+
+  .cert-card {
+
+    min-height: 155px;
+  }
+
+
+  /* Languages */
+
+  .languages-section {
+
+    padding-top: 68px;
+
+    padding-bottom: 68px;
+  }
+
+
+  .languages-section
+  .section-title {
+
+    margin-bottom: 24px;
+
+    font-size: 2.15rem;
+  }
+
+
+  .languages-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    margin-top: 24px;
+  }
+
+
+  .language-card {
+
+    min-height: 118px;
+
+    padding:
+      20px 22px;
+  }
+
+
+  .language-card h3 {
+
+    margin-top: 16px;
+
+    font-size: 20px;
+  }
+
+
+  /* Contact */
+
+  .contact-box {
+
+    padding: 26px;
+  }
+
+
+  .contact-links {
+
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .hero-title {
+
+    font-size: 2.25rem;
+
+    letter-spacing: -2.5px;
+  }
+
+
+  .hero-right {
+
+    min-height: 360px;
+  }
+
+
+  .mesh-wrap {
+
+    width: 335px;
+  }
+
+
+  .floating-card {
+
+    min-width: 100px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+
+    scroll-behavior: auto;
+  }
+
+
+  *,
+  *::before,
+  *::after {
+
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+}
