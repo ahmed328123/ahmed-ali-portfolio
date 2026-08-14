@@ -4,9 +4,6 @@
    ========================================================= */
 
 :root {
-
-  /* Core palette */
-
   --bg: #f3f7f7;
   --bg-soft: #eef4f4;
 
@@ -29,12 +26,10 @@
   --border-soft: rgba(16, 24, 32, 0.07);
 
   --shadow:
-    0 15px 42px
-    rgba(31, 51, 57, 0.07);
+    0 15px 42px rgba(31, 51, 57, 0.07);
 
   --shadow-hover:
-    0 22px 58px
-    rgba(31, 51, 57, 0.12);
+    0 22px 58px rgba(31, 51, 57, 0.12);
 
   --container: 1440px;
 
@@ -59,9 +54,7 @@ html {
 }
 
 body {
-
   min-height: 100vh;
-
   overflow-x: hidden;
 
   color: var(--text);
@@ -112,7 +105,6 @@ a {
 
 a:focus-visible,
 button:focus-visible {
-
   outline:
     3px solid rgba(20, 184, 154, 0.3);
 
@@ -132,7 +124,6 @@ button:focus-visible {
 #certifications,
 #languages,
 #contact {
-
   scroll-margin-top: 115px;
 }
 
@@ -142,7 +133,6 @@ button:focus-visible {
    ========================================================= */
 
 .page-bg {
-
   position: fixed;
 
   inset: 0;
@@ -150,19 +140,16 @@ button:focus-visible {
   z-index: -3;
 
   background:
-
     radial-gradient(
       circle at 72% 20%,
       rgba(20, 184, 154, 0.085),
       transparent 27%
     ),
-
     radial-gradient(
       circle at 14% 45%,
       rgba(63, 126, 232, 0.025),
       transparent 30%
     ),
-
     linear-gradient(
       180deg,
       #f8fbfb 0%,
@@ -170,9 +157,7 @@ button:focus-visible {
     );
 }
 
-
 .page-bg::before {
-
   content: "";
 
   position: absolute;
@@ -180,12 +165,10 @@ button:focus-visible {
   inset: 0;
 
   background-image:
-
     linear-gradient(
       rgba(28, 60, 64, 0.038) 1px,
       transparent 1px
     ),
-
     linear-gradient(
       90deg,
       rgba(28, 60, 64, 0.038) 1px,
@@ -212,9 +195,7 @@ button:focus-visible {
     );
 }
 
-
 .noise {
-
   position: fixed;
 
   inset: 0;
@@ -235,16 +216,13 @@ button:focus-visible {
    ========================================================= */
 
 .container {
-
   width:
     min(92%, var(--container));
 
   margin-inline: auto;
 }
 
-
 .section {
-
   padding:
     105px 0;
 
@@ -258,7 +236,6 @@ button:focus-visible {
    ========================================================= */
 
 .navbar {
-
   position: sticky;
 
   top: 0;
@@ -285,9 +262,7 @@ button:focus-visible {
     border-color 0.25s ease;
 }
 
-
 .nav-inner {
-
   position: relative;
 
   min-height: 82px;
@@ -299,11 +274,7 @@ button:focus-visible {
   justify-content: space-between;
 }
 
-
-/* Logo */
-
 .logo {
-
   position: relative;
 
   z-index: 2;
@@ -321,16 +292,11 @@ button:focus-visible {
   letter-spacing: -0.7px;
 }
 
-
 .logo span {
   color: var(--accent);
 }
 
-
-/* Navigation */
-
 .nav-links {
-
   position: absolute;
 
   left: 50%;
@@ -351,9 +317,7 @@ button:focus-visible {
   white-space: nowrap;
 }
 
-
 .nav-links a {
-
   position: relative;
 
   color: #66737a;
@@ -370,9 +334,7 @@ button:focus-visible {
     color 0.25s ease;
 }
 
-
 .nav-links a::after {
-
   content: "";
 
   position: absolute;
@@ -394,18 +356,14 @@ button:focus-visible {
     width 0.25s ease;
 }
 
-
 .nav-links a:hover,
 .nav-links a.active {
-
   color:
     var(--accent-dark);
 }
 
-
 .nav-links a:hover::after,
 .nav-links a.active::after {
-
   width: 100%;
 }
 
@@ -415,7 +373,6 @@ button:focus-visible {
    ========================================================= */
 
 .hero {
-
   position: relative;
 
   min-height:
@@ -436,9 +393,7 @@ button:focus-visible {
   padding-bottom: 52px;
 }
 
-
 .hero-left {
-
   position: relative;
 
   z-index: 3;
@@ -446,11 +401,7 @@ button:focus-visible {
   max-width: 720px;
 }
 
-
-/* Status */
-
 .status {
-
   display: flex;
 
   align-items: center;
@@ -472,9 +423,7 @@ button:focus-visible {
   letter-spacing: 2px;
 }
 
-
 .dot {
-
   width: 9px;
 
   height: 9px;
@@ -485,7 +434,6 @@ button:focus-visible {
     var(--accent);
 
   box-shadow:
-
     0 0 0 5px
     rgba(20, 184, 154, 0.08),
 
@@ -496,12 +444,9 @@ button:focus-visible {
     pulse 2s ease-in-out infinite;
 }
 
-
 @keyframes pulse {
-
   0%,
   100% {
-
     transform:
       scale(1);
 
@@ -509,7 +454,6 @@ button:focus-visible {
   }
 
   50% {
-
     transform:
       scale(0.75);
 
@@ -523,7 +467,6 @@ button:focus-visible {
    ========================================================= */
 
 .hero-title {
-
   margin-bottom: 29px;
 
   white-space: nowrap;
@@ -544,9 +487,7 @@ button:focus-visible {
   letter-spacing: -5px;
 }
 
-
 .hero-subtitle {
-
   margin-bottom: 20px;
 
   color:
@@ -565,9 +506,7 @@ button:focus-visible {
   letter-spacing: 0.6px;
 }
 
-
 .hero-text {
-
   max-width: 610px;
 
   margin-bottom: 23px;
@@ -586,7 +525,6 @@ button:focus-visible {
    ========================================================= */
 
 .hero-stack {
-
   display: flex;
 
   flex-wrap: wrap;
@@ -597,9 +535,7 @@ button:focus-visible {
   margin-bottom: 30px;
 }
 
-
 .hero-stack span {
-
   position: relative;
 
   padding-left: 14px;
@@ -611,9 +547,7 @@ button:focus-visible {
   font-weight: 500;
 }
 
-
 .hero-stack span::before {
-
   content: "";
 
   position: absolute;
@@ -641,7 +575,6 @@ button:focus-visible {
    ========================================================= */
 
 .hero-actions {
-
   display: flex;
 
   flex-wrap: wrap;
@@ -649,9 +582,7 @@ button:focus-visible {
   gap: 16px;
 }
 
-
 .btn {
-
   min-height: 52px;
 
   display: inline-flex;
@@ -686,16 +617,12 @@ button:focus-visible {
     box-shadow 0.25s ease;
 }
 
-
 .btn:hover {
-
   transform:
     translateY(-3px);
 }
 
-
 .btn-primary {
-
   color: #ffffff;
 
   border:
@@ -713,17 +640,13 @@ button:focus-visible {
     rgba(20, 184, 154, 0.18);
 }
 
-
 .btn-primary:hover {
-
   box-shadow:
     0 16px 35px
     rgba(20, 184, 154, 0.27);
 }
 
-
 .btn-secondary {
-
   color:
     var(--text);
 
@@ -734,9 +657,7 @@ button:focus-visible {
     rgba(255, 255, 255, 0.86);
 }
 
-
 .btn-secondary:hover {
-
   color:
     var(--accent-dark);
 
@@ -757,7 +678,6 @@ button:focus-visible {
    ========================================================= */
 
 .hero-right {
-
   position: relative;
 
   min-height: 620px;
@@ -777,7 +697,6 @@ button:focus-visible {
    ========================================================= */
 
 .mesh-wrap {
-
   position: relative;
 
   width:
@@ -795,9 +714,7 @@ button:focus-visible {
     floating 7s ease-in-out infinite;
 }
 
-
 .mesh-wrap::after {
-
   content: "";
 
   position: absolute;
@@ -829,26 +746,20 @@ button:focus-visible {
     blur(14px);
 }
 
-
 @keyframes floating {
-
   0%,
   100% {
-
     transform:
       translateY(0);
   }
 
   50% {
-
     transform:
       translateY(-13px);
   }
 }
 
-
 .mesh-core {
-
   position: absolute;
 
   width: 74%;
@@ -865,7 +776,6 @@ button:focus-visible {
     54% 44% 56% 46%;
 
   background:
-
     repeating-radial-gradient(
       circle at 50% 50%,
       transparent 0,
@@ -883,7 +793,6 @@ button:focus-visible {
     );
 
   box-shadow:
-
     inset 0 0 60px
     rgba(20, 184, 154, 0.065),
 
@@ -895,10 +804,8 @@ button:focus-visible {
     rotateCore 18s linear infinite;
 }
 
-
 .mesh-core::before,
 .mesh-core::after {
-
   content: "";
 
   position: absolute;
@@ -915,28 +822,21 @@ button:focus-visible {
     45% 60% 40% 55%;
 }
 
-
 .mesh-core::before {
-
   animation:
     rotateCoreReverse 13s linear infinite;
 }
 
-
 .mesh-core::after {
-
   inset: 20%;
 
   animation:
     rotateCore 10s linear infinite;
 }
 
-
 @keyframes morph {
-
   0%,
   100% {
-
     border-radius:
       45% 55% 52% 48%
       /
@@ -949,7 +849,6 @@ button:focus-visible {
   }
 
   50% {
-
     border-radius:
       58% 42% 40% 60%
       /
@@ -962,9 +861,7 @@ button:focus-visible {
   }
 }
 
-
 @keyframes rotateCore {
-
   from {
     rotate: 0deg;
   }
@@ -974,9 +871,7 @@ button:focus-visible {
   }
 }
 
-
 @keyframes rotateCoreReverse {
-
   from {
     rotate: 360deg;
   }
@@ -992,7 +887,6 @@ button:focus-visible {
    ========================================================= */
 
 .orbit {
-
   position: absolute;
 
   border:
@@ -1002,9 +896,7 @@ button:focus-visible {
   border-radius: 50%;
 }
 
-
 .orbit::before {
-
   content: "";
 
   position: absolute;
@@ -1023,9 +915,7 @@ button:focus-visible {
     rgba(20, 184, 154, 0.55);
 }
 
-
 .orbit-1 {
-
   width: 94%;
 
   height: 52%;
@@ -1037,17 +927,13 @@ button:focus-visible {
     orbitSpin 14s linear infinite;
 }
 
-
 .orbit-1::before {
-
   right: 8%;
 
   top: 17%;
 }
 
-
 .orbit-2 {
-
   width: 82%;
 
   height: 62%;
@@ -1059,17 +945,13 @@ button:focus-visible {
     orbitSpinReverse 17s linear infinite;
 }
 
-
 .orbit-2::before {
-
   left: 2%;
 
   bottom: 32%;
 }
 
-
 .orbit-3 {
-
   width: 63%;
 
   height: 93%;
@@ -1081,26 +963,20 @@ button:focus-visible {
     orbitSpin 20s linear infinite;
 }
 
-
 .orbit-3::before {
-
   right: 14%;
 
   bottom: 7%;
 }
 
-
 @keyframes orbitSpin {
-
   to {
     transform:
       rotate(378deg);
   }
 }
 
-
 @keyframes orbitSpinReverse {
-
   to {
     transform:
       rotate(-388deg);
@@ -1113,7 +989,6 @@ button:focus-visible {
    ========================================================= */
 
 .floating-card {
-
   position: absolute;
 
   z-index: 5;
@@ -1145,9 +1020,7 @@ button:focus-visible {
     cardFloat 5s ease-in-out infinite;
 }
 
-
 .floating-card p {
-
   margin-bottom: 9px;
 
   color:
@@ -1161,9 +1034,7 @@ button:focus-visible {
   font-weight: 700;
 }
 
-
 .floating-card span {
-
   display: flex;
 
   align-items: center;
@@ -1179,9 +1050,7 @@ button:focus-visible {
   font-size: 10px;
 }
 
-
 .floating-card i {
-
   width: 7px;
 
   height: 7px;
@@ -1196,17 +1065,13 @@ button:focus-visible {
     rgba(20, 184, 154, 0.5);
 }
 
-
 .card-1 {
-
   top: 18%;
 
   right: 4%;
 }
 
-
 .card-2 {
-
   top: 43%;
 
   right: 0;
@@ -1214,9 +1079,7 @@ button:focus-visible {
   animation-delay: -1.5s;
 }
 
-
 .card-3 {
-
   right: 9%;
 
   bottom: 14%;
@@ -1224,18 +1087,14 @@ button:focus-visible {
   animation-delay: -3s;
 }
 
-
 @keyframes cardFloat {
-
   0%,
   100% {
-
     transform:
       translateY(0);
   }
 
   50% {
-
     transform:
       translateY(-8px);
   }
@@ -1247,7 +1106,6 @@ button:focus-visible {
    ========================================================= */
 
 .section-top {
-
   display: flex;
 
   align-items: flex-end;
@@ -1257,9 +1115,7 @@ button:focus-visible {
   gap: 25px;
 }
 
-
 .section-top > div {
-
   display: flex;
 
   align-items: center;
@@ -1267,10 +1123,8 @@ button:focus-visible {
   gap: 18px;
 }
 
-
 .section-number,
 .section-label {
-
   color:
     var(--accent-dark);
 
@@ -1284,14 +1138,11 @@ button:focus-visible {
   letter-spacing: 1.7px;
 }
 
-
 .section-number {
   opacity: 0.72;
 }
 
-
 .section-title {
-
   margin-top: 14px;
 
   margin-bottom: 42px;
@@ -1308,10 +1159,8 @@ button:focus-visible {
   letter-spacing: -1.5px;
 }
 
-
 .section-link,
 .project-link {
-
   color:
     var(--accent-dark);
 
@@ -1329,16 +1178,12 @@ button:focus-visible {
     transform 0.2s ease;
 }
 
-
 .section-link:hover {
-
   color:
     var(--accent);
 }
 
-
 .project-link:hover {
-
   color:
     var(--accent);
 
@@ -1352,15 +1197,12 @@ button:focus-visible {
    ========================================================= */
 
 #projects {
-
   padding-top: 92px;
 
   padding-bottom: 105px;
 }
 
-
 #projects .section-title {
-
   margin-top: 12px;
 
   margin-bottom: 32px;
@@ -1369,9 +1211,7 @@ button:focus-visible {
     clamp(2.25rem, 3.2vw, 3rem);
 }
 
-
 .projects-grid {
-
   display: grid;
 
   grid-template-columns:
@@ -1382,11 +1222,7 @@ button:focus-visible {
   align-items: stretch;
 }
 
-
-/* Card */
-
 .project-card {
-
   position: relative;
 
   display: flex;
@@ -1414,9 +1250,7 @@ button:focus-visible {
     box-shadow 0.35s ease;
 }
 
-
 .project-card::before {
-
   content: "";
 
   position: absolute;
@@ -1447,9 +1281,7 @@ button:focus-visible {
   pointer-events: none;
 }
 
-
 .project-card:hover {
-
   border-color:
     rgba(20, 184, 154, 0.28);
 
@@ -1457,17 +1289,11 @@ button:focus-visible {
     var(--shadow-hover);
 }
 
-
 .project-card:hover::before {
-
   opacity: 1;
 }
 
-
-/* Screenshot */
-
 .project-image {
-
   position: relative;
 
   width: 100%;
@@ -1486,9 +1312,7 @@ button:focus-visible {
     #ffffff;
 }
 
-
 .project-image::after {
-
   content: "";
 
   position: absolute;
@@ -1505,9 +1329,7 @@ button:focus-visible {
     );
 }
 
-
 .project-image img {
-
   width: 100%;
 
   height: 100%;
@@ -1521,19 +1343,13 @@ button:focus-visible {
     cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
-
 .project-card:hover
 .project-image img {
-
   transform:
     scale(1.025);
 }
 
-
-/* Content */
-
 .project-content {
-
   flex: 1;
 
   display: flex;
@@ -1544,9 +1360,7 @@ button:focus-visible {
     22px 24px 24px;
 }
 
-
 .project-index {
-
   margin-bottom: 12px;
 
   color:
@@ -1560,9 +1374,7 @@ button:focus-visible {
   font-weight: 700;
 }
 
-
 .project-content h3 {
-
   margin-bottom: 8px;
 
   color:
@@ -1579,9 +1391,7 @@ button:focus-visible {
   letter-spacing: -0.4px;
 }
 
-
 .project-content > p {
-
   max-width: 95%;
 
   margin-bottom: 14px;
@@ -1594,9 +1404,7 @@ button:focus-visible {
   line-height: 1.65;
 }
 
-
 .project-link {
-
   align-self: flex-start;
 
   margin-top: auto;
@@ -1610,7 +1418,6 @@ button:focus-visible {
    ========================================================= */
 
 .testing-types {
-
   display: flex;
 
   flex-wrap: wrap;
@@ -1620,9 +1427,7 @@ button:focus-visible {
   margin-bottom: 13px;
 }
 
-
 .testing-type {
-
   display: inline-flex;
 
   align-items: center;
@@ -1644,9 +1449,7 @@ button:focus-visible {
   letter-spacing: 0.4px;
 }
 
-
 .testing-type::before {
-
   content: "";
 
   width: 6px;
@@ -1656,9 +1459,7 @@ button:focus-visible {
   border-radius: 50%;
 }
 
-
 .testing-type.manual {
-
   color: #326fc8;
 
   border:
@@ -1669,16 +1470,12 @@ button:focus-visible {
     rgba(63, 126, 232, 0.065);
 }
 
-
 .testing-type.manual::before {
-
   background:
     var(--blue);
 }
 
-
 .testing-type.automation {
-
   color:
     var(--accent-dark);
 
@@ -1690,9 +1487,7 @@ button:focus-visible {
     var(--accent-soft);
 }
 
-
 .testing-type.automation::before {
-
   background:
     var(--accent);
 }
@@ -1703,7 +1498,6 @@ button:focus-visible {
    ========================================================= */
 
 .tags {
-
   display: flex;
 
   flex-wrap: wrap;
@@ -1713,9 +1507,7 @@ button:focus-visible {
   margin-bottom: 18px;
 }
 
-
 .tags span {
-
   padding:
     5px 8px;
 
@@ -1737,9 +1529,7 @@ button:focus-visible {
     background 0.25s ease;
 }
 
-
 .tags span:hover {
-
   color:
     var(--accent-dark);
 
@@ -1756,7 +1546,6 @@ button:focus-visible {
    ========================================================= */
 
 .info-grid {
-
   position: relative;
 
   display: grid;
@@ -1774,9 +1563,7 @@ button:focus-visible {
     1px solid var(--border);
 }
 
-
 .info-grid::before {
-
   content: "";
 
   position: absolute;
@@ -1799,9 +1586,7 @@ button:focus-visible {
     );
 }
 
-
 .info-column {
-
   position: relative;
 
   min-width: 0;
@@ -1813,39 +1598,29 @@ button:focus-visible {
     1px solid var(--border);
 }
 
-
 .info-column:first-child {
-
   padding-left: 0;
 }
 
-
 .info-column:last-child {
-
   padding-right: 0;
 
   border-right: none;
 }
 
-
 .info-grid
 .section-number {
-
   font-size: 11px;
 }
 
-
 .info-grid
 .section-label {
-
   font-size: 13px;
 
   letter-spacing: 2.1px;
 }
 
-
 .section-top.mini {
-
   margin-bottom: 34px;
 }
 
@@ -1855,7 +1630,6 @@ button:focus-visible {
    ========================================================= */
 
 .timeline-item {
-
   position: relative;
 
   margin-left: 7px;
@@ -1869,9 +1643,7 @@ button:focus-visible {
     rgba(20, 184, 154, 0.34);
 }
 
-
 .timeline-item::before {
-
   content: "";
 
   position: absolute;
@@ -1901,14 +1673,11 @@ button:focus-visible {
     box-shadow 0.3s ease;
 }
 
-
 .timeline-item:hover::before {
-
   background:
     var(--accent);
 
   box-shadow:
-
     0 0 0 5px
     rgba(20, 184, 154, 0.09),
 
@@ -1916,15 +1685,11 @@ button:focus-visible {
     rgba(20, 184, 154, 0.22);
 }
 
-
 .timeline-item:last-child {
-
   padding-bottom: 0;
 }
 
-
 .time {
-
   display: inline-flex;
 
   align-items: center;
@@ -1954,9 +1719,7 @@ button:focus-visible {
   font-weight: 500;
 }
 
-
 .timeline-item h3 {
-
   margin-bottom: 6px;
 
   color:
@@ -1974,9 +1737,7 @@ button:focus-visible {
   letter-spacing: -0.35px;
 }
 
-
 .role {
-
   margin-bottom: 13px;
 
   color:
@@ -1989,9 +1750,7 @@ button:focus-visible {
   line-height: 1.5;
 }
 
-
 .timeline-item ul {
-
   padding-left: 17px;
 
   color:
@@ -2002,9 +1761,7 @@ button:focus-visible {
   line-height: 1.8;
 }
 
-
 .timeline-item li::marker {
-
   color:
     var(--accent);
 }
@@ -2015,7 +1772,6 @@ button:focus-visible {
    ========================================================= */
 
 .skills-boxes {
-
   display: grid;
 
   grid-template-columns:
@@ -2024,9 +1780,7 @@ button:focus-visible {
   gap: 12px;
 }
 
-
 .skill-box {
-
   position: relative;
 
   min-height: 168px;
@@ -2055,9 +1809,7 @@ button:focus-visible {
     box-shadow 0.3s ease;
 }
 
-
 .skill-box::after {
-
   content: "";
 
   position: absolute;
@@ -2083,9 +1835,7 @@ button:focus-visible {
     opacity 0.3s ease;
 }
 
-
 .skill-box:hover {
-
   transform:
     translateY(-3px);
 
@@ -2100,15 +1850,11 @@ button:focus-visible {
     rgba(31, 51, 57, 0.075);
 }
 
-
 .skill-box:hover::after {
-
   opacity: 0.75;
 }
 
-
 .skill-box h3 {
-
   display: flex;
 
   align-items: center;
@@ -2127,9 +1873,7 @@ button:focus-visible {
   line-height: 1.4;
 }
 
-
 .skill-box h3::before {
-
   content: "";
 
   width: 13px;
@@ -2144,9 +1888,7 @@ button:focus-visible {
     var(--accent);
 }
 
-
 .skill-box p {
-
   color:
     var(--text-soft);
 
@@ -2156,20 +1898,27 @@ button:focus-visible {
 }
 
 
+/* Manual Testing — WHITE like the other skill cards */
+
 .skill-box.testing-focus {
+  background:
+    rgba(255, 255, 255, 0.76);
 
   border-color:
-    rgba(20, 184, 154, 0.22);
-
-  background:
-    var(--accent-soft);
+    rgba(20, 184, 154, 0.24);
 }
 
-
 .skill-box.testing-focus h3 {
-
   color:
     var(--accent-dark);
+}
+
+.skill-box.testing-focus:hover {
+  background:
+    #ffffff;
+
+  border-color:
+    rgba(20, 184, 154, 0.34);
 }
 
 
@@ -2178,7 +1927,6 @@ button:focus-visible {
    ========================================================= */
 
 .cert-card {
-
   position: relative;
 
   min-height: 166px;
@@ -2212,9 +1960,7 @@ button:focus-visible {
     box-shadow 0.3s ease;
 }
 
-
 .cert-card::after {
-
   content: "";
 
   position: absolute;
@@ -2234,9 +1980,7 @@ button:focus-visible {
     height 0.35s ease;
 }
 
-
 .cert-card:hover {
-
   transform:
     translateX(3px);
 
@@ -2248,15 +1992,11 @@ button:focus-visible {
     rgba(31, 51, 57, 0.075);
 }
 
-
 .cert-card:hover::after {
-
   height: 100%;
 }
 
-
 .cert-card::before {
-
   content: "ISTQB®";
 
   display: block;
@@ -2274,9 +2014,7 @@ button:focus-visible {
   font-weight: 700;
 }
 
-
 .cert-card h3 {
-
   margin-bottom: 5px;
 
   color:
@@ -2290,9 +2028,7 @@ button:focus-visible {
   line-height: 1.4;
 }
 
-
 .cert-card p {
-
   margin-bottom: 13px;
 
   color:
@@ -2304,9 +2040,7 @@ button:focus-visible {
   font-size: 9.5px;
 }
 
-
 .cert-card a {
-
   width: fit-content;
 
   min-height: 31px;
@@ -2349,9 +2083,7 @@ button:focus-visible {
     color 0.25s ease;
 }
 
-
 .cert-card a:hover {
-
   color: #ffffff;
 
   background:
@@ -2367,7 +2099,6 @@ button:focus-visible {
    ========================================================= */
 
 .languages-section {
-
   position: relative;
 
   padding-top: 82px;
@@ -2375,10 +2106,8 @@ button:focus-visible {
   padding-bottom: 82px;
 }
 
-
 .languages-section
 .section-title {
-
   margin-top: 12px;
 
   margin-bottom: 30px;
@@ -2387,9 +2116,7 @@ button:focus-visible {
     clamp(2rem, 3.2vw, 3rem);
 }
 
-
 .languages-grid {
-
   display: grid;
 
   grid-template-columns:
@@ -2400,9 +2127,7 @@ button:focus-visible {
   margin-top: 30px;
 }
 
-
 .language-card {
-
   position: relative;
 
   min-height: 138px;
@@ -2436,9 +2161,7 @@ button:focus-visible {
     box-shadow 0.3s ease;
 }
 
-
 .language-card::before {
-
   content: "";
 
   position: absolute;
@@ -2463,9 +2186,7 @@ button:focus-visible {
   pointer-events: none;
 }
 
-
 .language-card:hover {
-
   transform:
     translateY(-4px);
 
@@ -2477,9 +2198,7 @@ button:focus-visible {
     rgba(31, 51, 57, 0.075);
 }
 
-
 .language-number {
-
   color:
     var(--text-muted);
 
@@ -2491,9 +2210,7 @@ button:focus-visible {
   letter-spacing: 1px;
 }
 
-
 .language-card h3 {
-
   margin-top: 20px;
 
   color:
@@ -2507,9 +2224,7 @@ button:focus-visible {
   letter-spacing: -0.45px;
 }
 
-
 .language-level {
-
   display: flex;
 
   align-items: center;
@@ -2531,9 +2246,7 @@ button:focus-visible {
   letter-spacing: 1px;
 }
 
-
 .language-level::after {
-
   content: "●";
 
   color:
@@ -2548,7 +2261,6 @@ button:focus-visible {
    ========================================================= */
 
 .contact-box {
-
   display: grid;
 
   grid-template-columns:
@@ -2578,9 +2290,7 @@ button:focus-visible {
     var(--shadow);
 }
 
-
 .contact-title h2 {
-
   color:
     var(--text);
 
@@ -2595,25 +2305,19 @@ button:focus-visible {
   letter-spacing: -1px;
 }
 
-
 .contact-title span {
-
   color:
     var(--accent-dark);
 }
 
-
 .contact-text {
-
   padding-left: 30px;
 
   border-left:
     1px solid var(--border);
 }
 
-
 .contact-text p {
-
   color:
     var(--text-soft);
 
@@ -2622,9 +2326,7 @@ button:focus-visible {
   line-height: 1.8;
 }
 
-
 .contact-links {
-
   display: grid;
 
   grid-template-columns:
@@ -2633,9 +2335,7 @@ button:focus-visible {
   gap: 22px;
 }
 
-
 .contact-links a {
-
   color:
     var(--text);
 
@@ -2648,9 +2348,7 @@ button:focus-visible {
     transform 0.25s ease;
 }
 
-
 .contact-links a:hover {
-
   color:
     var(--accent-dark);
 
@@ -2658,9 +2356,7 @@ button:focus-visible {
     translateX(3px);
 }
 
-
 .contact-links span {
-
   display: inline-block;
 
   margin-top: 4px;
@@ -2679,7 +2375,6 @@ button:focus-visible {
    ========================================================= */
 
 .footer {
-
   min-height: 85px;
 
   display: flex;
@@ -2704,9 +2399,7 @@ button:focus-visible {
   letter-spacing: 0.5px;
 }
 
-
 .footer a {
-
   color:
     var(--text-soft);
 
@@ -2714,9 +2407,7 @@ button:focus-visible {
     color 0.2s ease;
 }
 
-
 .footer a:hover {
-
   color:
     var(--accent-dark);
 }
@@ -2727,7 +2418,6 @@ button:focus-visible {
    ========================================================= */
 
 .reveal {
-
   opacity: 0;
 
   transform:
@@ -2738,9 +2428,7 @@ button:focus-visible {
     transform 0.7s ease;
 }
 
-
 .reveal.visible {
-
   opacity: 1;
 
   transform:
@@ -2753,29 +2441,22 @@ button:focus-visible {
    ========================================================= */
 
 ::-webkit-scrollbar {
-
   width: 8px;
 }
 
-
 ::-webkit-scrollbar-track {
-
   background:
     #edf3f3;
 }
 
-
 ::-webkit-scrollbar-thumb {
-
   border-radius: 10px;
 
   background:
     #becbcc;
 }
 
-
 ::-webkit-scrollbar-thumb:hover {
-
   background:
     #9daeb0;
 }
@@ -2791,54 +2472,39 @@ and
 (max-height: 900px) {
 
   .hero {
-
     padding-top: 28px;
 
     padding-bottom: 36px;
   }
 
-
   .status {
-
     margin-bottom: 18px;
   }
 
-
   .hero-title {
-
     margin-bottom: 22px;
 
     font-size:
       clamp(3.6rem, 4.8vw, 5.7rem);
   }
 
-
   .hero-subtitle {
-
     margin-bottom: 16px;
   }
 
-
   .hero-text {
-
     margin-bottom: 18px;
   }
 
-
   .hero-stack {
-
     margin-bottom: 22px;
   }
 
-
   .hero-right {
-
     min-height: 540px;
   }
 
-
   .info-column {
-
     padding-top: 58px;
 
     padding-bottom: 64px;
@@ -2853,35 +2519,26 @@ and
 @media (max-width: 1250px) {
 
   .nav-links {
-
     gap: 24px;
   }
 
-
   .nav-links a {
-
     font-size: 11px;
   }
 
-
   .hero-title {
-
     font-size:
       clamp(3.4rem, 4.8vw, 5rem);
 
     letter-spacing: -4px;
   }
 
-
   .project-image {
-
     height:
       clamp(270px, 23vw, 320px);
   }
 
-
   .info-column {
-
     padding-left: 25px;
 
     padding-right: 25px;
@@ -2896,57 +2553,40 @@ and
 @media (max-width: 1100px) {
 
   .hero {
-
     grid-template-columns:
       1fr 1fr;
   }
 
-
   .hero-title {
-
     font-size:
       clamp(3rem, 4.7vw, 4.3rem);
 
     letter-spacing: -3.4px;
   }
 
-
   .hero-right {
-
     min-height: 520px;
   }
 
-
   .project-content {
-
     padding: 20px;
   }
 
-
   .project-content h3 {
-
     font-size: 20px;
   }
 
-
-  /* Info */
-
   .info-grid {
-
     grid-template-columns: 1fr;
   }
 
-
   .info-grid::before {
-
     display: none;
   }
-
 
   .info-column,
   .info-column:first-child,
   .info-column:last-child {
-
     padding:
       58px 0;
 
@@ -2956,22 +2596,16 @@ and
       1px solid var(--border);
   }
 
-
   .info-column:last-child {
-
     border-bottom: none;
   }
 
-
   .skills-boxes {
-
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
   }
 
-
   #certifications {
-
     display: grid;
 
     grid-template-columns:
@@ -2980,32 +2614,22 @@ and
     gap: 14px;
   }
 
-
   #certifications
   .section-top {
-
     grid-column:
       1 / -1;
   }
 
-
   .cert-card {
-
     margin-bottom: 0;
   }
 
-
-  /* Contact */
-
   .contact-box {
-
     grid-template-columns:
       1fr 1fr;
   }
 
-
   .contact-links {
-
     grid-column:
       1 / -1;
   }
@@ -3024,35 +2648,22 @@ and
   #certifications,
   #languages,
   #contact {
-
     scroll-margin-top: 30px;
   }
 
-
-  /* Navbar */
-
   .navbar {
-
     position: relative;
   }
 
-
   .nav-inner {
-
     min-height: 72px;
   }
 
-
   .nav-links {
-
     display: none;
   }
 
-
-  /* Hero */
-
   .hero {
-
     min-height: auto;
 
     grid-template-columns:
@@ -3063,97 +2674,65 @@ and
     padding-bottom: 42px;
   }
 
-
   .hero-left {
-
     max-width: 100%;
   }
 
-
   .hero-title {
-
     font-size:
       clamp(3rem, 11vw, 5rem);
 
     letter-spacing: -4px;
   }
 
-
   .hero-right {
-
     min-height: 520px;
   }
 
-
-  /* Projects */
-
   #projects {
-
     padding-top: 80px;
 
     padding-bottom: 85px;
   }
 
-
   .projects-grid {
-
     grid-template-columns: 1fr;
 
     gap: 28px;
   }
 
-
   .project-image {
-
     height: auto;
 
     aspect-ratio:
       16 / 9;
   }
 
-
   .project-content {
-
     padding: 24px;
   }
 
-
-  /* Skills */
-
   .skills-boxes {
-
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
   }
 
-
   #certifications {
-
     grid-template-columns:
       1fr;
   }
-
-
-  /* Languages */
 
   .languages-grid {
-
     grid-template-columns:
       1fr;
   }
-
-
-  /* Contact */
 
   .contact-box {
-
     grid-template-columns:
       1fr;
   }
 
-
   .contact-text {
-
     padding-left: 0;
 
     padding-top: 20px;
@@ -3164,18 +2743,12 @@ and
       1px solid var(--border);
   }
 
-
   .contact-links {
-
     grid-template-columns:
       1fr 1fr;
   }
 
-
-  /* Footer */
-
   .footer {
-
     flex-direction: column;
 
     justify-content: center;
@@ -3193,46 +2766,31 @@ and
 @media (max-width: 560px) {
 
   .container {
-
     width: 90%;
   }
 
-
   .section {
-
     padding:
       75px 0;
   }
 
-
-  /* Logo */
-
   .logo {
-
     font-size: 19px;
   }
 
-
-  /* Hero */
-
   .hero {
-
     padding-top: 60px;
 
     padding-bottom: 30px;
   }
 
-
   .status {
-
     font-size: 10px;
 
     letter-spacing: 1.3px;
   }
 
-
   .hero-title {
-
     white-space: nowrap;
 
     font-size:
@@ -3243,216 +2801,140 @@ and
     letter-spacing: -3px;
   }
 
-
   .hero-subtitle {
-
     font-size: 1rem;
   }
 
-
   .hero-text {
-
     font-size: 14px;
   }
 
-
   .hero-stack {
-
     gap:
       10px 18px;
   }
 
-
   .hero-stack span {
-
     font-size: 12px;
   }
 
-
-  /* Buttons */
-
   .hero-actions {
-
     flex-direction: column;
 
     align-items: stretch;
   }
 
-
   .hero-actions
   .btn {
-
     width: 100%;
   }
 
-
-  /* Hero visual */
-
   .hero-right {
-
     min-height: 410px;
   }
 
-
   .mesh-wrap {
-
     width: 380px;
   }
 
-
   .floating-card {
-
     min-width: 112px;
 
     padding: 12px;
   }
 
-
   .floating-card p {
-
     font-size: 9px;
   }
 
-
   .floating-card span {
-
     font-size: 8px;
   }
 
-
   .card-1 {
-
     right: -1%;
   }
 
-
   .card-2 {
-
     right: -4%;
   }
 
-
   .card-3 {
-
     right: 1%;
   }
 
-
-  /* Section headers */
-
   .section-top {
-
     align-items: flex-start;
 
     flex-direction: column;
   }
 
-
-  /* Projects */
-
   #projects
   .section-title {
-
     margin-bottom: 28px;
 
     font-size: 2.25rem;
   }
 
-
   .project-card {
-
     border-radius: 11px;
   }
 
-
   .project-image {
-
     aspect-ratio:
       16 / 9;
   }
 
-
   .project-content {
-
     padding: 20px;
   }
 
-
   .project-content h3 {
-
     font-size: 20px;
   }
 
-
   .project-content > p {
-
     max-width: 100%;
 
     font-size: 12px;
   }
 
-
-  /* Experience */
-
   .timeline-item {
-
     padding-left: 24px;
   }
 
-
-  /* Skills */
-
   .skills-boxes {
-
     grid-template-columns: 1fr;
   }
 
-
   .skill-box {
-
     min-height: auto;
   }
 
-
-  /* Testing badges */
-
   .testing-types {
-
     flex-direction: column;
 
     align-items: flex-start;
   }
 
-
-  /* Certifications */
-
   .cert-card {
-
     min-height: 155px;
   }
 
-
-  /* Languages */
-
   .languages-section {
-
     padding-top: 68px;
 
     padding-bottom: 68px;
   }
 
-
   .languages-section
   .section-title {
-
     margin-bottom: 24px;
 
     font-size: 2.15rem;
   }
 
-
   .languages-grid {
-
     grid-template-columns: 1fr;
 
     gap: 12px;
@@ -3460,34 +2942,24 @@ and
     margin-top: 24px;
   }
 
-
   .language-card {
-
     min-height: 118px;
 
     padding:
       20px 22px;
   }
 
-
   .language-card h3 {
-
     margin-top: 16px;
 
     font-size: 20px;
   }
 
-
-  /* Contact */
-
   .contact-box {
-
     padding: 26px;
   }
 
-
   .contact-links {
-
     grid-template-columns: 1fr;
   }
 }
@@ -3500,27 +2972,20 @@ and
 @media (max-width: 390px) {
 
   .hero-title {
-
     font-size: 2.25rem;
 
     letter-spacing: -2.5px;
   }
 
-
   .hero-right {
-
     min-height: 360px;
   }
 
-
   .mesh-wrap {
-
     width: 335px;
   }
 
-
   .floating-card {
-
     min-width: 100px;
   }
 }
@@ -3533,15 +2998,12 @@ and
 @media (prefers-reduced-motion: reduce) {
 
   html {
-
     scroll-behavior: auto;
   }
-
 
   *,
   *::before,
   *::after {
-
     animation-duration:
       0.01ms !important;
 
