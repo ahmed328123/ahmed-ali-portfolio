@@ -1,2768 +1,1215 @@
-/* =========================================================
-   AHMED ALI — PREMIUM LIGHT QA PORTFOLIO
-   ========================================================= */
+<!DOCTYPE html>
+<html lang="en">
 
-:root {
-  --bg: #f4f7f8;
-  --bg-soft: #edf2f3;
+<head>
 
-  --surface: rgba(255, 255, 255, 0.86);
-  --surface-strong: #ffffff;
-
-  --text: #101820;
-  --text-soft: #5f6c74;
-  --text-muted: #87939a;
-
-  --accent: #16b896;
-  --accent-dark: #0c8f75;
-  --accent-soft: rgba(22, 184, 150, 0.09);
-  --accent-glow: rgba(22, 184, 150, 0.15);
+  <meta charset="UTF-8" />
 
-  --blue: #3f7ee8;
-  --blue-soft: rgba(63, 126, 232, 0.08);
-
-  --border: rgba(16, 24, 32, 0.11);
-  --border-soft: rgba(16, 24, 32, 0.065);
-  --border-accent: rgba(22, 184, 150, 0.35);
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
-  --shadow:
-    0 18px 50px rgba(35, 52, 61, 0.08);
-
-  --shadow-hover:
-    0 24px 65px rgba(35, 52, 61, 0.13);
-
-  --container: 1440px;
-
-  --font-main: "Inter", sans-serif;
-  --font-title: "Space Grotesk", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
-}
-
-
-/* =========================================================
-   RESET
-   ========================================================= */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  min-height: 100vh;
-  overflow-x: hidden;
-
-  font-family: var(--font-main);
-
-  color: var(--text);
-
-  background:
-    linear-gradient(
-      180deg,
-      #f7f9fa 0%,
-      #f2f6f7 50%,
-      #f4f7f8 100%
-    );
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-button {
-  font: inherit;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-ul {
-  padding-left: 18px;
-}
-
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-::selection {
-  color: #ffffff;
-  background: var(--accent);
-}
-
-
-/* =========================================================
-   NAV OFFSET
-   ========================================================= */
-
-#projects,
-#experience,
-#skills,
-#certifications,
-#languages,
-#contact {
-  scroll-margin-top: 115px;
-}
-
-
-/* =========================================================
-   BACKGROUND
-   ========================================================= */
-
-.page-bg {
-  position: fixed;
-  inset: 0;
-
-  z-index: -3;
-
-  background:
-    radial-gradient(
-      circle at 73% 20%,
-      rgba(22, 184, 150, 0.08),
-      transparent 24%
-    ),
-    radial-gradient(
-      circle at 20% 50%,
-      rgba(63, 126, 232, 0.035),
-      transparent 30%
-    ),
-    linear-gradient(
-      180deg,
-      #f8fafb 0%,
-      #f1f5f6 100%
-    );
-}
-
-.page-bg::before {
-  content: "";
-
-  position: absolute;
-  inset: 0;
+  <meta
+    name="color-scheme"
+    content="light"
+  />
 
-  background-image:
-    linear-gradient(
-      rgba(16, 24, 32, 0.035) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(16, 24, 32, 0.035) 1px,
-      transparent 1px
-    );
+  <meta
+    name="theme-color"
+    content="#f3f7f7"
+  />
 
-  background-size: 42px 42px;
+  <title>
+    Ahmed Ali | Software QA Engineer
+  </title>
 
-  mask-image:
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.9),
-      rgba(0, 0, 0, 0.25) 72%,
-      transparent
-    );
+  <meta
+    name="description"
+    content="Ahmed Ali - Software QA Engineer specializing in Manual Testing, Automation Testing, Playwright, Selenium, Java, TypeScript, API Testing and CI/CD."
+  />
 
-  -webkit-mask-image:
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.9),
-      rgba(0, 0, 0, 0.25) 72%,
-      transparent
-    );
-}
 
-.noise {
-  position: fixed;
-  inset: 0;
+  <!-- Google Fonts -->
 
-  z-index: -2;
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
 
-  pointer-events: none;
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
 
-  opacity: 0.012;
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
-  background-image:
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='.8'/%3E%3C/svg%3E");
-}
 
+  <!-- CSS -->
 
-/* =========================================================
-   GLOBAL
-   ========================================================= */
+  <link
+    rel="stylesheet"
+    href="./style.css?v=3"
+  />
 
-.container {
-  width: min(92%, var(--container));
+</head>
 
-  margin-inline: auto;
-}
 
-.section {
-  padding: 110px 0;
+<body>
 
-  border-top:
-    1px solid var(--border-soft);
-}
 
+  <!-- =====================================================
+       BACKGROUND
+       ===================================================== -->
 
-/* =========================================================
-   NAVBAR
-   ========================================================= */
+  <div
+    class="page-bg"
+    aria-hidden="true"
+  ></div>
 
-.navbar {
-  position: sticky;
-  top: 0;
+  <div
+    class="noise"
+    aria-hidden="true"
+  ></div>
 
-  z-index: 999;
 
-  width: 100%;
 
-  background:
-    rgba(248, 250, 251, 0.82);
+  <!-- =====================================================
+       NAVIGATION
+       ===================================================== -->
 
-  border-bottom:
-    1px solid var(--border);
+  <header class="navbar">
 
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-}
+    <div class="container nav-inner">
 
-.nav-inner {
-  position: relative;
 
-  min-height: 82px;
+      <!-- Logo -->
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+      <a
+        href="#"
+        class="logo"
+        aria-label="Ahmed Ali — back to top"
+      >
+        AHMED<span>.ALI</span>
+      </a>
 
-.logo {
-  position: relative;
 
-  z-index: 2;
 
-  flex-shrink: 0;
+      <!-- Navigation -->
 
-  color: var(--text);
+      <nav
+        class="nav-links"
+        aria-label="Main navigation"
+      >
 
-  font-family: var(--font-title);
+        <a href="#projects">
+          Work
+        </a>
 
-  font-size: 22px;
-  font-weight: 700;
+        <a href="#experience">
+          Experience
+        </a>
 
-  letter-spacing: -0.6px;
-}
+        <a href="#skills">
+          Skills
+        </a>
 
-.logo span {
-  color: var(--accent);
-}
+        <a href="#certifications">
+          Certifications
+        </a>
 
-.nav-links {
-  position: absolute;
+        <a href="#languages">
+          Languages
+        </a>
 
-  left: 50%;
-  top: 50%;
+        <a href="#contact">
+          Contact
+        </a>
 
-  transform:
-    translate(-50%, -50%);
+      </nav>
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  gap: 38px;
+    </div>
 
-  white-space: nowrap;
-}
+  </header>
 
-.nav-links a {
-  position: relative;
 
-  color: #606d74;
 
-  font-size: 12px;
-  font-weight: 700;
+  <!-- =====================================================
+       MAIN
+       ===================================================== -->
 
-  letter-spacing: 1px;
+  <main>
 
-  text-transform: uppercase;
 
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
-}
 
-.nav-links a::after {
-  content: "";
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
 
-  position: absolute;
+    <section
+      class="hero container"
+      aria-labelledby="hero-title"
+    >
 
-  left: 0;
-  bottom: -10px;
 
-  width: 0;
-  height: 2px;
+      <!-- Hero Left -->
 
-  background: var(--accent);
+      <div class="hero-left">
 
-  transition:
-    width 0.25s ease;
-}
 
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--accent-dark);
-}
+        <p class="status">
 
-.nav-links a:hover::after,
-.nav-links a.active::after {
-  width: 100%;
-}
+          <span
+            class="dot"
+            aria-hidden="true"
+          ></span>
 
+          AVAILABLE FOR QA OPPORTUNITIES
 
-/* =========================================================
-   HERO
-   ========================================================= */
+        </p>
 
-.hero {
-  position: relative;
 
-  min-height:
-    calc(100vh - 82px);
 
-  display: grid;
+        <!-- Name -->
 
-  grid-template-columns:
-    minmax(0, 0.9fr)
-    minmax(0, 1.1fr);
+        <h1
+          class="hero-title"
+          id="hero-title"
+        >
+          AHMED ALI
+        </h1>
 
-  align-items: center;
 
-  gap: 35px;
 
-  padding-top: 42px;
-  padding-bottom: 52px;
-}
+        <!-- Job Titles -->
 
-.hero-left {
-  position: relative;
+        <h2 class="hero-subtitle">
 
-  z-index: 3;
+          SOFTWARE QA ENGINEER<br />
 
-  max-width: 720px;
-}
+          TEST AUTOMATION ENGINEER
 
-.status {
-  display: flex;
-  align-items: center;
+        </h2>
 
-  gap: 11px;
 
-  margin-bottom: 24px;
 
-  color: var(--accent-dark);
+        <!-- Description -->
 
-  font-family: var(--font-mono);
+        <p class="hero-text">
 
-  font-size: 12px;
-  font-weight: 700;
+          Building reliable software through structured
+          Manual Testing and practical Automation Testing.
 
-  letter-spacing: 2px;
-}
+        </p>
 
-.dot {
-  width: 9px;
-  height: 9px;
 
-  border-radius: 50%;
 
-  background: var(--accent);
+        <!-- Technology Stack -->
 
-  box-shadow:
-    0 0 0 5px
-    rgba(22, 184, 150, 0.08),
-    0 0 18px
-    rgba(22, 184, 150, 0.35);
+        <div
+          class="hero-stack"
+          aria-label="Core technologies"
+        >
 
-  animation:
-    pulse 2s ease-in-out infinite;
-}
+          <span>
+            Manual Testing
+          </span>
 
-@keyframes pulse {
-  0%,
-  100% {
-    transform:
-      scale(1);
+          <span>
+            Automation Testing
+          </span>
 
-    opacity: 1;
-  }
+          <span>
+            Playwright
+          </span>
 
-  50% {
-    transform:
-      scale(0.75);
+          <span>
+            Selenium
+          </span>
 
-    opacity: 0.5;
-  }
-}
+          <span>
+            TypeScript
+          </span>
 
+          <span>
+            Java
+          </span>
 
-/* =========================================================
-   HERO NAME — ONE LINE
-   ========================================================= */
+          <span>
+            API Testing
+          </span>
 
-.hero-title {
-  margin-bottom: 28px;
+          <span>
+            CI/CD
+          </span>
 
-  white-space: nowrap;
+        </div>
 
-  color: #11191f;
 
-  font-family: var(--font-title);
 
-  font-size:
-    clamp(3.8rem, 5.1vw, 6.25rem);
+        <!-- Hero Actions -->
 
-  font-weight: 700;
+        <div class="hero-actions">
 
-  line-height: 0.92;
+          <a
+            href="#projects"
+            class="btn btn-primary"
+          >
+            VIEW PROJECTS ↗
+          </a>
 
-  letter-spacing: -5px;
-}
 
-.hero-subtitle {
-  margin-bottom: 20px;
+          <a
+            href="./assets/cv-en.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+          >
+            VIEW CV ↗
+          </a>
 
-  color: var(--accent-dark);
+        </div>
 
-  font-family: var(--font-title);
 
-  font-size:
-    clamp(1.15rem, 1.55vw, 1.7rem);
+      </div>
 
-  font-weight: 700;
 
-  line-height: 1.35;
 
-  letter-spacing: 0.7px;
-}
+      <!-- Hero Right -->
 
-.hero-text {
-  max-width: 600px;
+      <div
+        class="hero-right"
+        aria-hidden="true"
+      >
 
-  margin-bottom: 23px;
 
-  color: var(--text-soft);
+        <!-- Animated Technical Mesh -->
 
-  font-size: 16px;
+        <div class="mesh-wrap">
 
-  line-height: 1.72;
-}
+          <div class="mesh-core"></div>
 
+          <div class="orbit orbit-1"></div>
 
-/* =========================================================
-   HERO STACK
-   ========================================================= */
+          <div class="orbit orbit-2"></div>
 
-.hero-stack {
-  display: flex;
-  flex-wrap: wrap;
+          <div class="orbit orbit-3"></div>
 
-  gap: 11px 25px;
+        </div>
 
-  margin-bottom: 30px;
-}
 
-.hero-stack span {
-  position: relative;
 
-  padding-left: 14px;
+        <!-- QA Status Cards -->
 
-  color: #45525a;
+        <div class="floating-card card-1">
 
-  font-size: 14px;
-  font-weight: 500;
-}
+          <p>
+            UI TESTING
+          </p>
 
-.hero-stack span::before {
-  content: "";
+          <span>
 
-  position: absolute;
+            <i></i>
 
-  left: 0;
-  top: 50%;
+            ACTIVE
 
-  width: 5px;
-  height: 5px;
+          </span>
 
-  border-radius: 50%;
+        </div>
 
-  background: var(--accent);
 
-  transform:
-    translateY(-50%);
-}
+        <div class="floating-card card-2">
 
+          <p>
+            API TESTING
+          </p>
 
-/* =========================================================
-   BUTTONS
-   ========================================================= */
+          <span>
 
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+            <i></i>
 
-  gap: 16px;
-}
+            READY
 
-.btn {
-  min-height: 52px;
+          </span>
 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+        </div>
 
-  gap: 9px;
 
-  padding:
-    0 26px;
+        <div class="floating-card card-3">
 
-  border-radius: 7px;
+          <p>
+            AUTOMATION
+          </p>
 
-  cursor: pointer;
+          <span>
 
-  font-family: var(--font-mono);
+            <i></i>
 
-  font-size: 12px;
-  font-weight: 700;
+            RUNNING
 
-  letter-spacing: 0.6px;
+          </span>
 
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    background 0.25s ease,
-    color 0.25s ease,
-    box-shadow 0.25s ease;
-}
+        </div>
 
-.btn:hover {
-  transform:
-    translateY(-3px);
-}
 
-.btn-primary {
-  color: #ffffff;
+      </div>
 
-  border:
-    1px solid transparent;
 
-  background:
-    linear-gradient(
-      135deg,
-      #19c6a2,
-      #10ad8b
-    );
+    </section>
 
-  box-shadow:
-    0 12px 28px
-    rgba(22, 184, 150, 0.2);
-}
 
-.btn-primary:hover {
-  box-shadow:
-    0 15px 35px
-    rgba(22, 184, 150, 0.28);
-}
 
-.btn-secondary {
-  color: var(--text);
+    <!-- =====================================================
+         PROJECTS
+         ===================================================== -->
 
-  border:
-    1px solid
-    rgba(16, 24, 32, 0.18);
+    <section
+      id="projects"
+      class="section container"
+    >
 
-  background:
-    rgba(255, 255, 255, 0.75);
-}
 
-.btn-secondary:hover {
-  color: var(--accent-dark);
+      <div class="section-top">
 
-  border-color:
-    var(--border-accent);
+        <div>
 
-  background:
-    #ffffff;
+          <p class="section-number">
+            01
+          </p>
 
-  box-shadow:
-    0 12px 30px
-    rgba(26, 52, 59, 0.08);
-}
+          <p class="section-label">
+            FEATURED PROJECTS
+          </p>
 
+        </div>
 
-/* =========================================================
-   HERO RIGHT
-   ========================================================= */
 
-.hero-right {
-  position: relative;
+        <a
+          href="https://github.com/ahmed328123"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="section-link"
+        >
+          VIEW ALL WORK →
+        </a>
 
-  min-height: 620px;
+      </div>
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  perspective: 1200px;
-}
 
-.mesh-wrap {
-  position: relative;
+      <h2 class="section-title">
+        QA Case Studies
+      </h2>
 
-  width:
-    min(560px, 72vw);
 
-  aspect-ratio: 1;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+      <div class="projects-grid">
 
-  animation:
-    floating 7s ease-in-out infinite;
-}
 
-.mesh-wrap::after {
-  content: "";
 
-  position: absolute;
+        <!-- =================================================
+             SHOPMATE
+             ================================================= -->
 
-  left: 50%;
-  top: 50%;
+        <article class="project-card">
 
-  width: 45%;
-  aspect-ratio: 1;
 
-  transform:
-    translate(-50%, -50%);
+          <div class="project-image">
 
-  border-radius: 50%;
+            <img
+              src="./assets/images/shopmate-cover.png"
+              alt="ShopMate e-commerce QA project interface"
+            />
 
-  pointer-events: none;
+          </div>
 
-  background:
-    radial-gradient(
-      circle,
-      rgba(22, 184, 150, 0.11) 0%,
-      rgba(22, 184, 150, 0.04) 42%,
-      transparent 72%
-    );
 
-  filter:
-    blur(12px);
-}
 
-@keyframes floating {
-  0%,
-  100% {
-    transform:
-      translateY(0);
-  }
+          <div class="project-content">
 
-  50% {
-    transform:
-      translateY(-14px);
-  }
-}
 
-.mesh-core {
-  position: absolute;
+            <span class="project-index">
+              01
+            </span>
 
-  width: 73%;
-  height: 73%;
 
-  border:
-    1px solid
-    rgba(22, 184, 150, 0.45);
+            <h3>
+              ShopMate QA
+            </h3>
 
-  border-radius:
-    45% 55% 52% 48%
-    / 54% 44% 56% 46%;
 
-  background:
-    repeating-radial-gradient(
-      circle at 50% 50%,
-      transparent 0,
-      transparent 8px,
-      rgba(22, 184, 150, 0.09) 9px,
-      transparent 10px
-    ),
-    repeating-linear-gradient(
-      35deg,
-      transparent 0,
-      transparent 11px,
-      rgba(22, 184, 150, 0.075) 12px,
-      transparent 13px
-    );
+            <p>
+              Complete e-commerce QA project combining
+              structured Manual Testing with Playwright-based
+              Automation Testing.
+            </p>
 
-  box-shadow:
-    inset 0 0 55px
-    rgba(22, 184, 150, 0.05),
-    0 0 70px
-    rgba(22, 184, 150, 0.09);
 
-  animation:
-    morph 10s ease-in-out infinite,
-    rotateCore 18s linear infinite;
-}
 
-.mesh-core::before,
-.mesh-core::after {
-  content: "";
+            <!-- Testing Types -->
 
-  position: absolute;
+            <div class="testing-types">
 
-  inset: 10%;
+              <span class="testing-type manual">
+                Manual Testing
+              </span>
 
-  border:
-    1px solid
-    rgba(22, 184, 150, 0.16);
+              <span class="testing-type automation">
+                Automation Testing
+              </span>
 
-  border-radius:
-    60% 40% 45% 55%
-    / 45% 60% 40% 55%;
-}
+            </div>
 
-.mesh-core::before {
-  animation:
-    rotateCoreReverse 13s linear infinite;
-}
 
-.mesh-core::after {
-  inset: 20%;
 
-  animation:
-    rotateCore 10s linear infinite;
-}
+            <!-- Technologies -->
 
-@keyframes morph {
-  0%,
-  100% {
-    border-radius:
-      45% 55% 52% 48%
-      / 54% 44% 56% 46%;
+            <div class="tags">
 
-    transform:
-      rotateX(4deg)
-      rotateY(-6deg)
-      scale(1);
-  }
+              <span>
+                Test Cases
+              </span>
 
-  50% {
-    border-radius:
-      58% 42% 40% 60%
-      / 41% 59% 45% 55%;
+              <span>
+                Bug Reports
+              </span>
 
-    transform:
-      rotateX(-6deg)
-      rotateY(7deg)
-      scale(1.04);
-  }
-}
+              <span>
+                Playwright
+              </span>
 
-@keyframes rotateCore {
-  from {
-    rotate: 0deg;
-  }
+              <span>
+                TypeScript
+              </span>
 
-  to {
-    rotate: 360deg;
-  }
-}
+              <span>
+                POM
+              </span>
 
-@keyframes rotateCoreReverse {
-  from {
-    rotate: 360deg;
-  }
+              <span>
+                GitHub Actions
+              </span>
 
-  to {
-    rotate: 0deg;
-  }
-}
+            </div>
 
 
-/* =========================================================
-   ORBITS
-   ========================================================= */
 
-.orbit {
-  position: absolute;
+            <a
+              href="https://github.com/ahmed328123/shopmate-qa-playwright-typescript"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              VIEW CASE STUDY ↗
+            </a>
 
-  border:
-    1px dashed
-    rgba(22, 184, 150, 0.31);
 
-  border-radius: 50%;
-}
+          </div>
 
-.orbit::before {
-  content: "";
 
-  position: absolute;
+        </article>
 
-  width: 8px;
-  height: 8px;
 
-  border-radius: 50%;
 
-  background: var(--accent);
+        <!-- =================================================
+             SHOPSPHERE
+             ================================================= -->
 
-  box-shadow:
-    0 0 14px
-    rgba(22, 184, 150, 0.6);
-}
+        <article class="project-card">
 
-.orbit-1 {
-  width: 94%;
-  height: 52%;
 
-  transform:
-    rotate(18deg);
+          <div class="project-image">
 
-  animation:
-    orbitSpin 14s linear infinite;
-}
+            <img
+              src="./assets/images/shopsphere-cover.png"
+              alt="ShopSphere Selenium Java automation framework interface"
+            />
 
-.orbit-1::before {
-  right: 8%;
-  top: 17%;
-}
+          </div>
 
-.orbit-2 {
-  width: 82%;
-  height: 62%;
 
-  transform:
-    rotate(-28deg);
 
-  animation:
-    orbitSpinReverse 17s linear infinite;
-}
+          <div class="project-content">
 
-.orbit-2::before {
-  left: 2%;
-  bottom: 32%;
-}
 
-.orbit-3 {
-  width: 63%;
-  height: 93%;
+            <span class="project-index">
+              02
+            </span>
 
-  transform:
-    rotate(42deg);
 
-  animation:
-    orbitSpin 20s linear infinite;
-}
+            <h3>
+              ShopSphere Automation Framework
+            </h3>
 
-.orbit-3::before {
-  right: 14%;
-  bottom: 7%;
-}
 
-@keyframes orbitSpin {
-  to {
-    transform:
-      rotate(378deg);
-  }
-}
+            <p>
+              Comprehensive Automation Testing framework
+              covering Web UI, REST API and database validation
+              with continuous integration.
+            </p>
 
-@keyframes orbitSpinReverse {
-  to {
-    transform:
-      rotate(-388deg);
-  }
-}
 
 
-/* =========================================================
-   FLOATING CARDS
-   ========================================================= */
+            <!-- Testing Type -->
 
-.floating-card {
-  position: absolute;
+            <div class="testing-types">
 
-  min-width: 145px;
+              <span class="testing-type automation">
+                Automation Testing
+              </span>
 
-  z-index: 5;
+            </div>
 
-  padding:
-    16px 18px;
 
-  border:
-    1px solid
-    rgba(16, 24, 32, 0.11);
 
-  border-radius: 10px;
+            <!-- Technologies -->
 
-  background:
-    rgba(255, 255, 255, 0.9);
+            <div class="tags">
 
-  backdrop-filter:
-    blur(14px);
+              <span>
+                Selenium
+              </span>
 
-  -webkit-backdrop-filter:
-    blur(14px);
+              <span>
+                Java
+              </span>
 
-  box-shadow:
-    0 14px 36px
-    rgba(35, 52, 61, 0.1);
+              <span>
+                TestNG
+              </span>
 
-  animation:
-    cardFloat 5s ease-in-out infinite;
-}
+              <span>
+                REST Assured
+              </span>
 
-.floating-card p {
-  margin-bottom: 9px;
+              <span>
+                JDBC
+              </span>
 
-  color: #233039;
+              <span>
+                Jenkins
+              </span>
 
-  font-family:
-    var(--font-mono);
+            </div>
 
-  font-size: 11px;
-  font-weight: 700;
-}
 
-.floating-card span {
-  display: flex;
-  align-items: center;
 
-  gap: 8px;
+            <a
+              href="https://github.com/ahmed328123/shopsphere-selenium-java-automation"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="project-link"
+            >
+              VIEW CASE STUDY ↗
+            </a>
 
-  color: var(--text-soft);
 
-  font-family:
-    var(--font-mono);
+          </div>
 
-  font-size: 10px;
-}
 
-.floating-card i {
-  width: 7px;
-  height: 7px;
+        </article>
 
-  border-radius: 50%;
 
-  background:
-    var(--accent);
+      </div>
 
-  box-shadow:
-    0 0 10px
-    rgba(22, 184, 150, 0.5);
-}
 
-.card-1 {
-  top: 18%;
-  right: 4%;
-}
+    </section>
 
-.card-2 {
-  top: 43%;
-  right: 0;
 
-  animation-delay: -1.5s;
-}
 
-.card-3 {
-  right: 9%;
-  bottom: 14%;
+    <!-- =====================================================
+         EXPERIENCE / SKILLS / CERTIFICATIONS
+         ===================================================== -->
 
-  animation-delay: -3s;
-}
+    <section class="section container info-grid">
 
-@keyframes cardFloat {
-  0%,
-  100% {
-    transform:
-      translateY(0);
-  }
 
-  50% {
-    transform:
-      translateY(-8px);
-  }
-}
 
+      <!-- ===================================================
+           EXPERIENCE
+           =================================================== -->
 
-/* =========================================================
-   SECTION HEADERS
-   ========================================================= */
+      <div
+        id="experience"
+        class="info-column"
+      >
 
-.section-top {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
 
-  gap: 25px;
-}
+        <div class="section-top mini">
 
-.section-top > div {
-  display: flex;
-  align-items: center;
+          <div>
 
-  gap: 18px;
-}
+            <p class="section-number">
+              02
+            </p>
 
-.section-number,
-.section-label {
-  color: var(--accent-dark);
+            <p class="section-label">
+              EXPERIENCE
+            </p>
 
-  font-family:
-    var(--font-mono);
+          </div>
 
-  font-size: 11px;
-  font-weight: 700;
+        </div>
 
-  letter-spacing: 1.7px;
-}
 
-.section-number {
-  opacity: 0.75;
-}
 
-.section-title {
-  margin-top: 14px;
-  margin-bottom: 42px;
+        <!-- Testlio -->
 
-  color: var(--text);
+        <div class="timeline-item">
 
-  font-family:
-    var(--font-title);
+          <span class="time">
+            2026 – Present
+          </span>
 
-  font-size:
-    clamp(2.1rem, 4vw, 3.6rem);
 
-  letter-spacing: -1.5px;
-}
+          <h3>
+            TESTLIO
+          </h3>
 
-.section-link,
-.project-link {
-  color:
-    var(--accent-dark);
 
-  font-family:
-    var(--font-mono);
+          <p class="role">
+            Software Tester (Freelance)
+          </p>
 
-  font-size: 11px;
-  font-weight: 700;
 
-  letter-spacing: 1px;
+          <ul>
 
-  transition:
-    opacity 0.2s ease,
-    transform 0.2s ease,
-    color 0.2s ease;
-}
+            <li>
+              Manual Software Testing
+            </li>
 
-.section-link:hover,
-.project-link:hover {
-  color: var(--accent);
+            <li>
+              Payment Testing
+            </li>
 
-  opacity: 0.85;
-}
+            <li>
+              Accessibility Testing
+            </li>
 
+            <li>
+              Bug Reporting & Documentation
+            </li>
 
-/* =========================================================
-   PROJECTS
-   ========================================================= */
+          </ul>
 
-#projects {
-  padding-top: 92px;
-  padding-bottom: 105px;
-}
+        </div>
 
-#projects .section-title {
-  margin-top: 12px;
-  margin-bottom: 32px;
 
-  font-size:
-    clamp(2.25rem, 3.2vw, 3rem);
 
-  letter-spacing: -1.3px;
-}
+        <!-- Demag -->
 
-.projects-grid {
-  display: grid;
+        <div class="timeline-item">
 
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+          <span class="time">
+            2023 – 2025
+          </span>
 
-  align-items: stretch;
 
-  gap: 24px;
-}
+          <h3>
+            DEMAG Cranes & Components
+          </h3>
 
-.project-card {
-  position: relative;
 
-  display: flex;
-  flex-direction: column;
+          <p class="role">
+            Embedded Solutions Development
+          </p>
 
-  min-width: 0;
 
-  overflow: hidden;
+          <ul>
 
-  border:
-    1px solid var(--border);
+            <li>
+              Software Testing
+            </li>
 
-  border-radius: 14px;
+            <li>
+              Robot Framework / Python
+            </li>
 
-  background:
-    rgba(255, 255, 255, 0.87);
+            <li>
+              Hardware & Software Validation
+            </li>
 
-  box-shadow:
-    var(--shadow);
+            <li>
+              Jira / Zephyr / Git
+            </li>
 
-  transition:
-    transform 0.35s ease,
-    border-color 0.35s ease,
-    box-shadow 0.35s ease;
-}
+          </ul>
 
-.project-card::before {
-  content: "";
+        </div>
 
-  position: absolute;
 
-  left: 0;
-  top: 0;
+      </div>
 
-  z-index: 4;
 
-  width: 100%;
-  height: 2px;
 
-  opacity: 0;
+      <!-- ===================================================
+           SKILLS
+           =================================================== -->
 
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      var(--accent),
-      transparent
-    );
+      <div
+        id="skills"
+        class="info-column"
+      >
 
-  transition:
-    opacity 0.35s ease;
 
-  pointer-events: none;
-}
+        <div class="section-top mini">
 
-.project-card:hover {
-  transform:
-    translateY(-5px);
+          <div>
 
-  border-color:
-    rgba(22, 184, 150, 0.28);
+            <p class="section-number">
+              03
+            </p>
 
-  box-shadow:
-    var(--shadow-hover);
-}
+            <p class="section-label">
+              SKILLS
+            </p>
 
-.project-card:hover::before {
-  opacity: 1;
-}
+          </div>
 
-.project-image {
-  position: relative;
+        </div>
 
-  width: 100%;
-  height:
-    clamp(280px, 21vw, 340px);
 
-  flex-shrink: 0;
 
-  overflow: hidden;
+        <div class="skills-boxes">
 
-  border-bottom:
-    1px solid var(--border-soft);
 
-  background:
-    #ffffff;
-}
 
-.project-image::after {
-  content: "";
+          <!-- Manual Testing -->
 
-  position: absolute;
-  inset: 0;
+          <div class="skill-box testing-focus">
 
-  pointer-events: none;
+            <h3>
+              Manual Testing
+            </h3>
 
-  background:
-    linear-gradient(
-      180deg,
-      transparent 76%,
-      rgba(16, 24, 32, 0.04)
-    );
-}
+            <p>
+              Functional Testing<br />
+              Regression Testing<br />
+              End-to-End Testing<br />
+              Accessibility Testing<br />
+              Test Case Design<br />
+              Bug Reporting
+            </p>
 
-.project-image img {
-  width: 100%;
-  height: 100%;
+          </div>
 
-  object-fit: cover;
-  object-position: center;
 
-  transition:
-    transform 0.65s
-    cubic-bezier(0.2, 0.7, 0.2, 1);
-}
 
-.project-card:hover .project-image img {
-  transform:
-    scale(1.025);
-}
+          <!-- Automation -->
 
-.project-content {
-  position: relative;
+          <div class="skill-box">
 
-  flex: 1;
+            <h3>
+              Automation Testing
+            </h3>
 
-  display: flex;
-  flex-direction: column;
+            <p>
+              Playwright<br />
+              Selenium WebDriver<br />
+              Robot Framework<br />
+              TestNG<br />
+              Cucumber<br />
+              Page Object Model
+            </p>
 
-  padding:
-    22px 24px 24px;
-}
+          </div>
 
-.project-index {
-  display: block;
 
-  margin-bottom: 12px;
 
-  color: var(--accent-dark);
+          <!-- API / Database -->
 
-  font-family:
-    var(--font-mono);
+          <div class="skill-box">
 
-  font-size: 10px;
-  font-weight: 700;
-}
+            <h3>
+              API / Database
+            </h3>
 
-.project-content h3 {
-  margin-bottom: 8px;
+            <p>
+              Postman<br />
+              REST Assured<br />
+              JDBC<br />
+              SQL<br />
+              H2 Database
+            </p>
 
-  color: var(--text);
+          </div>
 
-  font-family:
-    var(--font-title);
 
-  font-size:
-    clamp(1.25rem, 1.7vw, 1.45rem);
 
-  line-height: 1.25;
+          <!-- Tools -->
 
-  letter-spacing: -0.4px;
-}
+          <div class="skill-box">
 
-.project-content > p {
-  max-width: 95%;
+            <h3>
+              Tools / CI-CD
+            </h3>
 
-  margin-bottom: 14px;
+            <p>
+              Jira<br />
+              Zephyr<br />
+              Jenkins<br />
+              Git & GitHub<br />
+              GitHub Actions
+            </p>
 
-  color: var(--text-soft);
+          </div>
 
-  font-size: 12.5px;
 
-  line-height: 1.62;
-}
+        </div>
 
-.project-link {
-  align-self: flex-start;
 
-  margin-top: auto;
-  padding-top: 4px;
-}
+      </div>
 
-.project-link:hover {
-  transform:
-    translateX(3px);
-}
 
 
-/* =========================================================
-   TESTING TYPES
-   ========================================================= */
+      <!-- ===================================================
+           CERTIFICATIONS
+           =================================================== -->
 
-.testing-types {
-  display: flex;
-  flex-wrap: wrap;
+      <div
+        id="certifications"
+        class="info-column"
+      >
 
-  gap: 8px;
 
-  margin-bottom: 13px;
-}
+        <div class="section-top mini">
 
-.testing-type {
-  display: inline-flex;
-  align-items: center;
+          <div>
 
-  gap: 7px;
+            <p class="section-number">
+              04
+            </p>
 
-  padding:
-    6px 10px;
+            <p class="section-label">
+              CERTIFICATIONS
+            </p>
 
-  border-radius: 5px;
+          </div>
 
-  font-family:
-    var(--font-mono);
+        </div>
 
-  font-size: 9px;
-  font-weight: 700;
 
-  letter-spacing: 0.4px;
-}
 
-.testing-type::before {
-  content: "";
+        <!-- CTFL -->
 
-  width: 6px;
-  height: 6px;
+        <div class="cert-card">
 
-  border-radius: 50%;
-}
+          <h3>
+            Certified Tester Foundation Level
+          </h3>
 
-.testing-type.manual,
-.tag-manual {
-  color: #2f6ecb;
+          <p>
+            CTFL v4
+          </p>
 
-  border:
-    1px solid
-    rgba(63, 126, 232, 0.23);
+          <a
+            href="https://atsqa.org/certified-testers/profile/50f4b5ab74a24242892d9b220a066ed3"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            VERIFY ↗
+          </a>
 
-  background:
-    rgba(63, 126, 232, 0.07);
-}
+        </div>
 
-.testing-type.manual::before {
-  background: var(--blue);
-}
 
-.testing-type.automation,
-.tag-automation {
-  color: var(--accent-dark);
 
-  border:
-    1px solid
-    rgba(22, 184, 150, 0.26);
+        <!-- CT GenAI -->
 
-  background:
-    rgba(22, 184, 150, 0.07);
-}
+        <div class="cert-card">
 
-.testing-type.automation::before {
-  background: var(--accent);
-}
+          <h3>
+            Testing with Generative AI
+          </h3>
 
+          <p>
+            CT-GenAI
+          </p>
 
-/* =========================================================
-   TAGS
-   ========================================================= */
+          <a
+            href="https://atsqa.org/certified-testers/profile/50f4b5ab74a24242892d9b220a066ed3"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            VERIFY ↗
+          </a>
 
-.tags {
-  display: flex;
-  flex-wrap: wrap;
+        </div>
 
-  gap: 7px;
 
-  margin-bottom: 18px;
-}
+      </div>
 
-.tags span {
-  padding:
-    5px 8px;
 
-  color: #526068;
+    </section>
 
-  border:
-    1px solid
-    var(--border);
 
-  border-radius: 5px;
 
-  background:
-    rgba(245, 248, 249, 0.75);
+    <!-- =====================================================
+         LANGUAGES
+         ===================================================== -->
 
-  font-size: 9.5px;
+    <section
+      id="languages"
+      class="section container languages-section"
+    >
 
-  transition:
-    border-color 0.25s ease,
-    background 0.25s ease,
-    color 0.25s ease;
-}
 
-.tags span:hover {
-  color: var(--accent-dark);
+      <div class="section-top">
 
-  border-color:
-    rgba(22, 184, 150, 0.25);
+        <div>
 
-  background:
-    rgba(22, 184, 150, 0.055);
-}
+          <p class="section-number">
+            05
+          </p>
 
+          <p class="section-label">
+            LANGUAGES
+          </p>
 
-/* =========================================================
-   INFO GRID
-   ========================================================= */
+        </div>
 
-.info-grid {
-  position: relative;
+      </div>
 
-  display: grid;
 
-  grid-template-columns:
-    minmax(0, 0.96fr)
-    minmax(0, 1.12fr)
-    minmax(0, 0.96fr);
 
-  padding-top: 0;
-  padding-bottom: 0;
+      <h2 class="section-title">
+        Communication
+      </h2>
 
-  border-top:
-    1px solid var(--border-soft);
-}
 
-.info-grid::before {
-  content: "";
 
-  position: absolute;
+      <div class="languages-grid">
 
-  top: 0;
-  left: 33%;
 
-  width: 34%;
-  height: 180px;
 
-  pointer-events: none;
+        <!-- German -->
 
-  background:
-    radial-gradient(
-      ellipse at top,
-      rgba(22, 184, 150, 0.055),
-      transparent 70%
-    );
-}
+        <article class="language-card">
 
-.info-column {
-  position: relative;
+          <span class="language-number">
+            01
+          </span>
 
-  min-width: 0;
+          <h3>
+            German
+          </h3>
 
-  padding:
-    64px 34px 72px;
+          <div class="language-level">
+            C1
+          </div>
 
-  border-right:
-    1px solid var(--border-soft);
-}
+        </article>
 
-.info-column:first-child {
-  padding-left: 0;
-}
 
-.info-column:last-child {
-  padding-right: 0;
 
-  border-right: none;
-}
+        <!-- English -->
 
-.info-grid .section-number {
-  font-size: 11px;
-}
+        <article class="language-card">
 
-.info-grid .section-label {
-  font-size: 13px;
+          <span class="language-number">
+            02
+          </span>
 
-  letter-spacing: 2.1px;
-}
+          <h3>
+            English
+          </h3>
 
-.section-top.mini {
-  margin-bottom: 34px;
-}
+          <div class="language-level">
+            C1
+          </div>
 
+        </article>
 
-/* =========================================================
-   EXPERIENCE
-   ========================================================= */
 
-.timeline-item {
-  position: relative;
 
-  margin-left: 7px;
+        <!-- Arabic -->
 
-  padding-left: 29px;
-  padding-bottom: 42px;
+        <article class="language-card">
 
-  border-left:
-    1px solid
-    rgba(22, 184, 150, 0.32);
-}
+          <span class="language-number">
+            03
+          </span>
 
-.timeline-item::before {
-  content: "";
+          <h3>
+            Arabic
+          </h3>
 
-  position: absolute;
+          <div class="language-level">
+            Native
+          </div>
 
-  left: -5px;
-  top: 5px;
+        </article>
 
-  width: 9px;
-  height: 9px;
 
-  border-radius: 50%;
+      </div>
 
-  background: #ffffff;
 
-  border:
-    2px solid var(--accent);
+    </section>
 
-  box-shadow:
-    0 0 0 4px
-    rgba(22, 184, 150, 0.08);
 
-  transition:
-    box-shadow 0.3s ease,
-    background 0.3s ease;
-}
 
-.timeline-item:hover::before {
-  background: var(--accent);
+    <!-- =====================================================
+         CONTACT
+         ===================================================== -->
 
-  box-shadow:
-    0 0 0 5px
-    rgba(22, 184, 150, 0.1),
-    0 0 18px
-    rgba(22, 184, 150, 0.23);
-}
+    <section
+      id="contact"
+      class="section container contact-box"
+    >
 
-.timeline-item:last-child {
-  padding-bottom: 0;
-}
 
-.time {
-  display: inline-flex;
-  align-items: center;
+      <div class="contact-title">
 
-  min-height: 23px;
+        <h2>
 
-  margin-bottom: 10px;
+          READY FOR THE<br />
 
-  padding:
-    0 8px;
+          <span>
+            NEXT TEST CYCLE?
+          </span>
 
-  color: #66747d;
+        </h2>
 
-  border:
-    1px solid var(--border-soft);
+      </div>
 
-  border-radius: 4px;
 
-  background:
-    rgba(255, 255, 255, 0.65);
 
-  font-family:
-    var(--font-mono);
+      <div class="contact-text">
 
-  font-size: 9px;
-  font-weight: 500;
-}
+        <p>
+          Let’s work together to build reliable,
+          accessible and high-quality software.
+        </p>
 
-.timeline-item h3 {
-  margin-bottom: 6px;
+      </div>
 
-  color: var(--text);
 
-  font-family:
-    var(--font-title);
 
-  font-size: 17px;
-  font-weight: 700;
+      <div class="contact-links">
 
-  line-height: 1.3;
 
-  letter-spacing: -0.35px;
-}
 
-.role {
-  margin-bottom: 13px;
+        <!-- Email -->
 
-  color:
-    var(--accent-dark);
+        <a
+          href="mailto:ahmedali328123@gmail.com"
+        >
 
-  font-size: 11.5px;
-  font-weight: 600;
+          Email
 
-  line-height: 1.5;
-}
+          <br />
 
-.timeline-item ul {
-  padding-left: 17px;
+          <span>
+            ahmedali328123@gmail.com
+          </span>
 
-  color:
-    var(--text-soft);
+        </a>
 
-  font-size: 11.5px;
 
-  line-height: 1.78;
-}
 
-.timeline-item li::marker {
-  color:
-    var(--accent);
-}
+        <!-- LinkedIn -->
 
+        <a
+          href="https://www.linkedin.com/in/ahmedali328123/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
 
-/* =========================================================
-   SKILLS
-   ========================================================= */
+          LinkedIn
 
-.skills-boxes {
-  display: grid;
+          <br />
 
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+          <span>
+            /in/ahmedali328123
+          </span>
 
-  gap: 12px;
-}
+        </a>
 
-.skill-box {
-  position: relative;
 
-  min-height: 168px;
 
-  overflow: hidden;
+        <!-- GitHub -->
 
-  padding:
-    18px 19px 17px;
+        <a
+          href="https://github.com/ahmed328123"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
 
-  border:
-    1px solid var(--border);
+          GitHub
 
-  border-radius: 9px;
+          <br />
 
-  background:
-    rgba(255, 255, 255, 0.72);
+          <span>
+            github.com/ahmed328123
+          </span>
 
-  box-shadow:
-    0 10px 28px
-    rgba(35, 52, 61, 0.045);
+        </a>
 
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    background 0.3s ease,
-    box-shadow 0.3s ease;
-}
 
-.skill-box::after {
-  content: "";
 
-  position: absolute;
+        <!-- CV -->
 
-  left: 19px;
-  right: 19px;
-  bottom: 0;
+        <a
+          href="./assets/cv-en.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
 
-  height: 2px;
+          View CV
 
-  opacity: 0;
+          <br />
 
-  background:
-    linear-gradient(
-      90deg,
-      var(--accent),
-      transparent
-    );
+          <span>
+            Open PDF
+          </span>
 
-  transition:
-    opacity 0.3s ease;
-}
+        </a>
 
-.skill-box:hover {
-  transform:
-    translateY(-3px);
 
-  border-color:
-    rgba(22, 184, 150, 0.25);
+      </div>
 
-  background: #ffffff;
 
-  box-shadow:
-    0 15px 35px
-    rgba(35, 52, 61, 0.08);
-}
+    </section>
 
-.skill-box:hover::after {
-  opacity: 0.75;
-}
 
-.skill-box h3 {
-  display: flex;
-  align-items: center;
+  </main>
 
-  gap: 10px;
 
-  margin-bottom: 12px;
 
-  color: var(--text);
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
 
-  font-size: 13.5px;
-  font-weight: 700;
+  <footer class="footer container">
 
-  line-height: 1.4;
-}
+    <p>
+      © 2026 Ahmed Ali. All rights reserved.
+    </p>
 
-.skill-box h3::before {
-  content: "";
+    <p>
+      Software QA · Manual Testing · Automation Testing
+    </p>
 
-  width: 13px;
-  height: 2px;
+    <a href="#">
+      BACK TO TOP ↑
+    </a>
 
-  flex-shrink: 0;
+  </footer>
 
-  border-radius: 4px;
 
-  background: var(--accent);
-}
 
-.skill-box p {
-  color: var(--text-soft);
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
 
-  font-size: 10.8px;
+  <script src="./script.js?v=3"></script>
 
-  line-height: 1.75;
-}
 
-.skill-box.testing-focus {
-  border-color:
-    rgba(22, 184, 150, 0.22);
+</body>
 
-  background:
-    rgba(240, 252, 249, 0.75);
-}
-
-.skill-box.testing-focus h3 {
-  color:
-    var(--accent-dark);
-}
-
-
-/* =========================================================
-   CERTIFICATIONS
-   ========================================================= */
-
-.cert-card {
-  position: relative;
-
-  min-height: 166px;
-
-  display: flex;
-  flex-direction: column;
-
-  overflow: hidden;
-
-  margin-bottom: 12px;
-
-  padding:
-    19px 20px 18px;
-
-  border:
-    1px solid var(--border);
-
-  border-radius: 10px;
-
-  background:
-    rgba(255, 255, 255, 0.8);
-
-  box-shadow:
-    0 10px 28px
-    rgba(35, 52, 61, 0.05);
-
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.cert-card::after {
-  content: "";
-
-  position: absolute;
-
-  left: 0;
-  top: 0;
-
-  width: 3px;
-  height: 0;
-
-  background:
-    var(--accent);
-
-  transition:
-    height 0.35s ease;
-}
-
-.cert-card:hover {
-  transform:
-    translateX(3px);
-
-  border-color:
-    rgba(22, 184, 150, 0.26);
-
-  box-shadow:
-    0 15px 36px
-    rgba(35, 52, 61, 0.09);
-}
-
-.cert-card:hover::after {
-  height: 100%;
-}
-
-.cert-card::before {
-  content: "ISTQB®";
-
-  display: block;
-
-  margin-bottom: 12px;
-
-  color: #29363e;
-
-  font-family:
-    var(--font-title);
-
-  font-size: 18px;
-  font-weight: 700;
-
-  letter-spacing: -0.4px;
-}
-
-.cert-card h3 {
-  margin-bottom: 5px;
-
-  color: var(--text);
-
-  font-family:
-    var(--font-title);
-
-  font-size: 13.5px;
-  font-weight: 700;
-
-  line-height: 1.4;
-}
-
-.cert-card p {
-  margin-bottom: 13px;
-
-  color: #6a7880;
-
-  font-family:
-    var(--font-mono);
-
-  font-size: 9.5px;
-}
-
-.cert-card a {
-  width: fit-content;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-height: 31px;
-
-  margin-top: auto;
-
-  padding:
-    0 10px;
-
-  color:
-    var(--accent-dark);
-
-  border:
-    1px solid
-    rgba(22, 184, 150, 0.3);
-
-  border-radius: 5px;
-
-  background:
-    rgba(22, 184, 150, 0.04);
-
-  font-family:
-    var(--font-mono);
-
-  font-size: 8.5px;
-  font-weight: 700;
-
-  letter-spacing: 0.5px;
-
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease;
-}
-
-.cert-card a:hover {
-  color: #ffffff;
-
-  background: var(--accent);
-
-  transform:
-    translateY(-2px);
-}
-
-
-/* =========================================================
-   LANGUAGES
-   ========================================================= */
-
-.languages-section {
-  position: relative;
-
-  padding-top: 82px;
-  padding-bottom: 82px;
-}
-
-.languages-section .section-title {
-  margin-top: 12px;
-  margin-bottom: 30px;
-
-  font-size:
-    clamp(2rem, 3.2vw, 3rem);
-
-  letter-spacing: -1.25px;
-}
-
-.languages-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 18px;
-
-  margin-top: 30px;
-}
-
-.language-card {
-  position: relative;
-
-  min-height: 138px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  overflow: hidden;
-
-  padding:
-    24px 26px;
-
-  border:
-    1px solid var(--border);
-
-  border-radius: 11px;
-
-  background:
-    rgba(255, 255, 255, 0.75);
-
-  box-shadow:
-    0 12px 32px
-    rgba(35, 52, 61, 0.055);
-
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.language-card::before {
-  content: "";
-
-  position: absolute;
-
-  width: 115px;
-  height: 115px;
-
-  top: -70px;
-  right: -45px;
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(22, 184, 150, 0.11),
-      transparent 68%
-    );
-
-  pointer-events: none;
-}
-
-.language-card:hover {
-  transform:
-    translateY(-4px);
-
-  border-color:
-    rgba(22, 184, 150, 0.3);
-
-  box-shadow:
-    0 16px 40px
-    rgba(35, 52, 61, 0.09);
-}
-
-.language-number {
-  color: var(--text-muted);
-
-  font-family:
-    var(--font-mono);
-
-  font-size: 9px;
-
-  letter-spacing: 1px;
-}
-
-.language-card h3 {
-  margin-top: 20px;
-
-  color: var(--text);
-
-  font-family:
-    var(--font-title);
-
-  font-size: 22px;
-
-  letter-spacing: -0.45px;
-}
-
-.language-level {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  margin-top: 12px;
-
-  color:
-    var(--accent-dark);
-
-  font-family:
-    var(--font-mono);
-
-  font-size: 10px;
-  font-weight: 700;
-
-  letter-spacing: 1px;
-}
-
-.language-level::after {
-  content: "●";
-
-  color: var(--accent);
-
-  font-size: 7px;
-
-  opacity: 0.8;
-}
-
-
-/* =========================================================
-   CONTACT
-   ========================================================= */
-
-.contact-box {
-  display: grid;
-
-  grid-template-columns:
-    1.3fr
-    0.7fr
-    1.3fr;
-
-  align-items: center;
-
-  gap: 38px;
-
-  margin-top: 90px;
-  margin-bottom: 35px;
-
-  padding: 38px;
-
-  border:
-    1px solid var(--border);
-
-  border-radius: 14px;
-
-  background:
-    rgba(255, 255, 255, 0.82);
-
-  box-shadow:
-    var(--shadow);
-}
-
-.contact-title h2 {
-  color: var(--text);
-
-  font-family:
-    var(--font-title);
-
-  font-size:
-    clamp(2rem, 3vw, 3.2rem);
-
-  line-height: 1.05;
-
-  letter-spacing: -1px;
-}
-
-.contact-title span {
-  color:
-    var(--accent-dark);
-}
-
-.contact-text {
-  padding-left: 30px;
-
-  border-left:
-    1px solid var(--border);
-}
-
-.contact-text p {
-  color: var(--text-soft);
-
-  font-size: 13px;
-
-  line-height: 1.8;
-}
-
-.contact-links {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 22px;
-}
-
-.contact-links a {
-  color: var(--text);
-
-  font-size: 12px;
-  font-weight: 700;
-
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
-}
-
-.contact-links a:hover {
-  color:
-    var(--accent-dark);
-
-  transform:
-    translateX(3px);
-}
-
-.contact-links span {
-  display: inline-block;
-
-  margin-top: 4px;
-
-  color:
-    var(--text-muted);
-
-  font-size: 10px;
-  font-weight: 400;
-}
-
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
-.footer {
-  min-height: 85px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 20px;
-
-  border-top:
-    1px solid var(--border-soft);
-
-  color:
-    var(--text-muted);
-
-  font-family:
-    var(--font-mono);
-
-  font-size: 9px;
-
-  letter-spacing: 0.5px;
-}
-
-.footer a {
-  color:
-    var(--text-soft);
-}
-
-.footer a:hover {
-  color:
-    var(--accent-dark);
-}
-
-
-/* =========================================================
-   REVEAL
-   ========================================================= */
-
-.reveal {
-  opacity: 0;
-
-  transform:
-    translateY(25px);
-
-  transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-
-  transform:
-    translateY(0);
-}
-
-
-/* =========================================================
-   SCROLLBAR
-   ========================================================= */
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background:
-    #edf2f3;
-}
-
-::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-
-  background:
-    #c2ced1;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background:
-    #9fadb2;
-}
-
-
-/* =========================================================
-   SHORT DESKTOP
-   ========================================================= */
-
-@media (min-width: 821px) and (max-height: 900px) {
-
-  .hero {
-    padding-top: 28px;
-    padding-bottom: 36px;
-  }
-
-  .status {
-    margin-bottom: 18px;
-  }
-
-  .hero-title {
-    font-size:
-      clamp(3.6rem, 4.8vw, 5.7rem);
-
-    margin-bottom: 22px;
-  }
-
-  .hero-subtitle {
-    margin-bottom: 16px;
-  }
-
-  .hero-text {
-    margin-bottom: 18px;
-  }
-
-  .hero-stack {
-    margin-bottom: 22px;
-  }
-
-  .hero-right {
-    min-height: 540px;
-  }
-
-  .info-column {
-    padding-top: 58px;
-    padding-bottom: 64px;
-  }
-}
-
-
-/* =========================================================
-   RESPONSIVE — 1250
-   ========================================================= */
-
-@media (max-width: 1250px) {
-
-  .nav-links {
-    gap: 24px;
-  }
-
-  .nav-links a {
-    font-size: 11px;
-  }
-
-  .hero-title {
-    font-size:
-      clamp(3.4rem, 4.8vw, 5rem);
-
-    letter-spacing: -4px;
-  }
-
-  .project-image {
-    height:
-      clamp(270px, 23vw, 320px);
-  }
-
-  .info-column {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
-}
-
-
-/* =========================================================
-   RESPONSIVE — 1100
-   ========================================================= */
-
-@media (max-width: 1100px) {
-
-  .hero {
-    grid-template-columns:
-      1fr 1fr;
-  }
-
-  .hero-title {
-    font-size:
-      clamp(3rem, 4.7vw, 4.3rem);
-
-    letter-spacing: -3.4px;
-  }
-
-  .hero-right {
-    min-height: 520px;
-  }
-
-  .project-content {
-    padding: 20px;
-  }
-
-  .project-content h3 {
-    font-size: 20px;
-  }
-
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .info-grid::before {
-    display: none;
-  }
-
-  .info-column,
-  .info-column:first-child,
-  .info-column:last-child {
-    padding:
-      58px 0;
-
-    border-right: none;
-
-    border-bottom:
-      1px solid var(--border);
-  }
-
-  .info-column:last-child {
-    border-bottom: none;
-  }
-
-  .skills-boxes {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
-  #certifications {
-    display: grid;
-
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-
-    gap: 14px;
-  }
-
-  #certifications .section-top {
-    grid-column:
-      1 / -1;
-  }
-
-  .cert-card {
-    margin-bottom: 0;
-  }
-
-  .contact-box {
-    grid-template-columns:
-      1fr 1fr;
-  }
-
-  .contact-links {
-    grid-column:
-      1 / -1;
-  }
-}
-
-
-/* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 820px) {
-
-  #projects,
-  #experience,
-  #skills,
-  #certifications,
-  #languages,
-  #contact {
-    scroll-margin-top: 30px;
-  }
-
-  .navbar {
-    position: relative;
-  }
-
-  .nav-inner {
-    min-height: 72px;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .hero {
-    min-height: auto;
-
-    grid-template-columns: 1fr;
-
-    padding-top: 80px;
-    padding-bottom: 42px;
-  }
-
-  .hero-left {
-    max-width: 100%;
-  }
-
-  .hero-title {
-    font-size:
-      clamp(3rem, 11vw, 5rem);
-
-    letter-spacing: -4px;
-  }
-
-  .hero-right {
-    min-height: 520px;
-  }
-
-  #projects {
-    padding-top: 80px;
-    padding-bottom: 85px;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-
-    gap: 28px;
-  }
-
-  .project-image {
-    height: auto;
-
-    aspect-ratio:
-      16 / 9;
-  }
-
-  .project-content {
-    padding: 24px;
-  }
-
-  .skills-boxes {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
-  #certifications {
-    grid-template-columns: 1fr;
-  }
-
-  .languages-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-box {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-text {
-    padding-left: 0;
-    padding-top: 20px;
-
-    border-left: none;
-
-    border-top:
-      1px solid var(--border);
-  }
-
-  .contact-links {
-    grid-template-columns:
-      1fr 1fr;
-  }
-
-  .footer {
-    flex-direction: column;
-
-    justify-content: center;
-
-    padding:
-      30px 0;
-  }
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 560px) {
-
-  .container {
-    width: 90%;
-  }
-
-  .section {
-    padding:
-      80px 0;
-  }
-
-  .logo {
-    font-size: 19px;
-  }
-
-  .hero {
-    padding-top: 65px;
-    padding-bottom: 35px;
-  }
-
-  .hero-title {
-    white-space: nowrap;
-
-    font-size:
-      clamp(2.4rem, 11.5vw, 3.5rem);
-
-    line-height: 0.95;
-
-    letter-spacing: -3px;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .hero-text {
-    font-size: 14px;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-
-    align-items: stretch;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-  }
-
-  .hero-right {
-    min-height: 410px;
-  }
-
-  .mesh-wrap {
-    width: 390px;
-  }
-
-  .floating-card {
-    min-width: 115px;
-
-    padding: 12px;
-  }
-
-  .floating-card p {
-    font-size: 9px;
-  }
-
-  .floating-card span {
-    font-size: 8px;
-  }
-
-  .card-1 {
-    right: -1%;
-  }
-
-  .card-2 {
-    right: -4%;
-  }
-
-  .card-3 {
-    right: 1%;
-  }
-
-  .section-top {
-    align-items: flex-start;
-
-    flex-direction: column;
-  }
-
-  #projects .section-title {
-    margin-bottom: 28px;
-
-    font-size: 2.25rem;
-  }
-
-  .project-image {
-    aspect-ratio:
-      16 / 9;
-  }
-
-  .project-content {
-    padding: 20px;
-  }
-
-  .project-content h3 {
-    font-size: 20px;
-  }
-
-  .project-content > p {
-    max-width: 100%;
-
-    font-size: 12px;
-  }
-
-  .timeline-item {
-    padding-left: 24px;
-  }
-
-  .skills-boxes {
-    grid-template-columns: 1fr;
-  }
-
-  .skill-box {
-    min-height: auto;
-  }
-
-  .testing-types {
-    flex-direction: column;
-
-    align-items: flex-start;
-  }
-
-  .cert-card {
-    min-height: 155px;
-  }
-
-  .languages-section {
-    padding-top: 68px;
-    padding-bottom: 68px;
-  }
-
-  .languages-section .section-title {
-    font-size: 2.15rem;
-
-    margin-bottom: 24px;
-  }
-
-  .languages-grid {
-    grid-template-columns: 1fr;
-
-    gap: 12px;
-
-    margin-top: 24px;
-  }
-
-  .language-card {
-    min-height: 118px;
-
-    padding:
-      20px 22px;
-  }
-
-  .language-card h3 {
-    margin-top: 16px;
-
-    font-size: 20px;
-  }
-
-  .contact-box {
-    padding: 26px;
-  }
-
-  .contact-links {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-/* =========================================================
-   ACCESSIBILITY
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration:
-      0.01ms !important;
-
-    animation-iteration-count:
-      1 !important;
-
-    transition-duration:
-      0.01ms !important;
-  }
-}
+</html>
