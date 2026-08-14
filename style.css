@@ -1910,7 +1910,7 @@ button:focus-visible {
 
 .skill-box.testing-focus h3 {
   color:
-    var(--accent-dark);
+    var(--text);
 }
 
 .skill-box.testing-focus:hover {
