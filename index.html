@@ -10,6 +10,16 @@
     content="width=device-width, initial-scale=1.0"
   />
 
+  <meta
+    name="color-scheme"
+    content="light"
+  />
+
+  <meta
+    name="theme-color"
+    content="#f3f7f7"
+  />
+
   <title>
     Ahmed Ali | Software QA Engineer
   </title>
@@ -34,16 +44,16 @@
   />
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
     rel="stylesheet"
   />
 
 
-  <!-- CSS — versioned to prevent old cached dark CSS -->
+  <!-- CSS -->
 
   <link
     rel="stylesheet"
-    href="style.css?v=2"
+    href="./style.css?v=3"
   />
 
 </head>
@@ -56,14 +66,20 @@
        BACKGROUND
        ===================================================== -->
 
-  <div class="page-bg"></div>
+  <div
+    class="page-bg"
+    aria-hidden="true"
+  ></div>
 
-  <div class="noise"></div>
+  <div
+    class="noise"
+    aria-hidden="true"
+  ></div>
 
 
 
   <!-- =====================================================
-       NAVBAR
+       NAVIGATION
        ===================================================== -->
 
   <header class="navbar">
@@ -76,7 +92,7 @@
       <a
         href="#"
         class="logo"
-        aria-label="Back to top"
+        aria-label="Ahmed Ali — back to top"
       >
         AHMED<span>.ALI</span>
       </a>
@@ -85,7 +101,10 @@
 
       <!-- Navigation -->
 
-      <nav class="nav-links">
+      <nav
+        class="nav-links"
+        aria-label="Main navigation"
+      >
 
         <a href="#projects">
           Work
@@ -132,7 +151,10 @@
          HERO
          ===================================================== -->
 
-    <section class="hero container">
+    <section
+      class="hero container"
+      aria-labelledby="hero-title"
+    >
 
 
       <!-- Hero Left -->
@@ -142,7 +164,10 @@
 
         <p class="status">
 
-          <span class="dot"></span>
+          <span
+            class="dot"
+            aria-hidden="true"
+          ></span>
 
           AVAILABLE FOR QA OPPORTUNITIES
 
@@ -152,7 +177,10 @@
 
         <!-- Name -->
 
-        <h1 class="hero-title">
+        <h1
+          class="hero-title"
+          id="hero-title"
+        >
           AHMED ALI
         </h1>
 
@@ -183,7 +211,10 @@
 
         <!-- Technology Stack -->
 
-        <div class="hero-stack">
+        <div
+          class="hero-stack"
+          aria-label="Core technologies"
+        >
 
           <span>
             Manual Testing
@@ -251,10 +282,13 @@
 
       <!-- Hero Right -->
 
-      <div class="hero-right">
+      <div
+        class="hero-right"
+        aria-hidden="true"
+      >
 
 
-        <!-- Animated Mesh -->
+        <!-- Animated Technical Mesh -->
 
         <div class="mesh-wrap">
 
@@ -270,7 +304,7 @@
 
 
 
-        <!-- Testing Status Cards -->
+        <!-- QA Status Cards -->
 
         <div class="floating-card card-1">
 
@@ -389,7 +423,7 @@
 
             <img
               src="./assets/images/shopmate-cover.png"
-              alt="ShopMate QA project"
+              alt="ShopMate e-commerce QA project interface"
             />
 
           </div>
@@ -493,7 +527,7 @@
 
             <img
               src="./assets/images/shopsphere-cover.png"
-              alt="ShopSphere automation framework"
+              alt="ShopSphere Selenium Java automation framework interface"
             />
 
           </div>
@@ -766,7 +800,7 @@
 
 
 
-          <!-- Automation Testing -->
+          <!-- Automation -->
 
           <div class="skill-box">
 
@@ -807,7 +841,7 @@
 
 
 
-          <!-- Tools / CI-CD -->
+          <!-- Tools -->
 
           <div class="skill-box">
 
@@ -861,7 +895,7 @@
 
 
 
-        <!-- ISTQB CTFL -->
+        <!-- CTFL -->
 
         <div class="cert-card">
 
@@ -885,7 +919,7 @@
 
 
 
-        <!-- ISTQB CT-GenAI -->
+        <!-- CT GenAI -->
 
         <div class="cert-card">
 
@@ -1059,6 +1093,7 @@
       <div class="contact-links">
 
 
+
         <!-- Email -->
 
         <a
@@ -1168,9 +1203,11 @@
 
 
 
-  <!-- JavaScript -->
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
 
-  <script src="script.js?v=2"></script>
+  <script src="./script.js?v=3"></script>
 
 
 </body>
