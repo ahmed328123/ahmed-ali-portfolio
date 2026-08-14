@@ -1,6 +1,6 @@
 /* =========================================================
-   Ahmed Ali — Advanced QA Portfolio
-   Final Clean Interactions & Animations
+   Ahmed Ali — Premium Light QA Portfolio
+   Interactions & Animations
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const finePointer = window.matchMedia(
     "(pointer: fine)"
   ).matches;
+
 
 
   /* =======================================================
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
     });
+
 
 
   /* =======================================================
@@ -107,8 +109,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+
   /* =======================================================
-     HERO ENTRANCE ANIMATION
+     HERO ENTRANCE
      ======================================================= */
 
   if (!reducedMotion) {
@@ -163,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
             duration: 700,
 
             delay:
-              100 + index * 100,
+              100 + index * 90,
 
             easing:
               "cubic-bezier(.2,.7,.2,1)",
@@ -179,8 +182,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+
   /* =======================================================
-     ACTIVE NAVBAR SECTION
+     NAVIGATION
      ======================================================= */
 
   const sections =
@@ -192,6 +196,17 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(
       ".nav-links a"
     );
+
+
+  function clearActiveNav() {
+
+    navLinks.forEach((link) => {
+
+      link.classList.remove("active");
+
+    });
+
+  }
 
 
   function setActiveNav(sectionId) {
@@ -229,7 +244,9 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
 
-        if (visibleEntries.length === 0) {
+        if (
+          visibleEntries.length === 0
+        ) {
           return;
         }
 
@@ -262,12 +279,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
+
   /* =======================================================
-     NAVBAR SCROLL EFFECT
+     LIGHT NAVBAR SCROLL EFFECT
      ======================================================= */
 
   const navbar =
-    document.querySelector(".navbar");
+    document.querySelector(
+      ".navbar"
+    );
+
+  const projectsSection =
+    document.querySelector(
+      "#projects"
+    );
 
 
   function updateNavbar() {
@@ -277,21 +302,49 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    if (window.scrollY > 40) {
+    if (window.scrollY > 35) {
 
       navbar.style.background =
-        "rgba(5, 9, 13, 0.94)";
+        "rgba(248, 250, 251, 0.96)";
 
       navbar.style.boxShadow =
-        "0 10px 45px rgba(0,0,0,0.20)";
+        "0 10px 35px rgba(35, 52, 61, 0.07)";
+
+      navbar.style.borderBottomColor =
+        "rgba(16, 24, 32, 0.10)";
 
     } else {
 
       navbar.style.background =
-        "rgba(5, 9, 13, 0.72)";
+        "rgba(248, 250, 251, 0.88)";
 
       navbar.style.boxShadow =
         "none";
+
+      navbar.style.borderBottomColor =
+        "rgba(16, 24, 32, 0.08)";
+
+    }
+
+
+    /*
+     * Do not highlight WORK
+     * while the user is still in the hero.
+     */
+
+    if (projectsSection) {
+
+      const projectsTop =
+        projectsSection.offsetTop;
+
+      if (
+        window.scrollY <
+        projectsTop - 250
+      ) {
+
+        clearActiveNav();
+
+      }
 
     }
 
@@ -308,12 +361,15 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
 
+
   /* =======================================================
-     HERO MOUSE PARALLAX
+     HERO PARALLAX
      ======================================================= */
 
   const hero =
-    document.querySelector(".hero");
+    document.querySelector(
+      ".hero"
+    );
 
   const heroRight =
     document.querySelector(
@@ -329,7 +385,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ) {
 
     heroRight.style.transition =
-      "transform 0.18s ease-out";
+      "transform 0.2s ease-out";
 
 
     hero.addEventListener(
@@ -361,8 +417,8 @@ document.addEventListener("DOMContentLoaded", () => {
         heroRight.style.transform =
           `
           translate3d(
-            ${x * 9}px,
-            ${y * 7}px,
+            ${x * 7}px,
+            ${y * 6}px,
             0
           )
           `;
@@ -384,8 +440,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+
   /* =======================================================
-     PROJECT CARD 3D HOVER
+     PROJECT CARD PREMIUM HOVER — LIGHT MODE
      ======================================================= */
 
   const projectCards =
@@ -423,34 +480,34 @@ document.addEventListener("DOMContentLoaded", () => {
             (
               (x / rect.width) -
               0.5
-            ) * 2.2;
+            ) * 1.8;
 
 
           const rotateX =
             (
               (y / rect.height) -
               0.5
-            ) * -2.2;
+            ) * -1.8;
 
 
           card.style.transform =
             `
-            perspective(1000px)
+            perspective(1200px)
             rotateX(${rotateX}deg)
             rotateY(${rotateY}deg)
-            translateY(-7px)
+            translateY(-6px)
             `;
 
 
           card.style.boxShadow =
             `
-            0 30px 70px
-            rgba(0,0,0,.38),
+            0 26px 60px
+            rgba(35, 52, 61, 0.13),
 
-            ${rotateY * -4}px
-            ${rotateX * 4}px
-            45px
-            rgba(85,230,193,.05)
+            ${rotateY * -2}px
+            ${rotateX * 2}px
+            35px
+            rgba(20, 184, 154, 0.05)
             `;
 
         }
@@ -473,8 +530,57 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+
   /* =======================================================
-     LANGUAGE CARD STAGGER
+     FLOATING CARDS SUBTLE DEPTH
+     ======================================================= */
+
+  const floatingCards =
+    document.querySelectorAll(
+      ".floating-card"
+    );
+
+
+  if (
+    !reducedMotion &&
+    finePointer
+  ) {
+
+    floatingCards.forEach(
+      (card) => {
+
+        card.addEventListener(
+          "mouseenter",
+          () => {
+
+            card.style.boxShadow =
+              `
+              0 18px 45px
+              rgba(35, 52, 61, 0.12)
+              `;
+
+          }
+        );
+
+
+        card.addEventListener(
+          "mouseleave",
+          () => {
+
+            card.style.boxShadow = "";
+
+          }
+        );
+
+      }
+    );
+
+  }
+
+
+
+  /* =======================================================
+     LANGUAGE STAGGER
      ======================================================= */
 
   const languageCards =
@@ -489,12 +595,13 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!reducedMotion) {
 
         card.style.transitionDelay =
-          `${index * 70}ms`;
+          `${index * 65}ms`;
 
       }
 
     }
   );
+
 
 
   /* =======================================================
@@ -513,12 +620,13 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!reducedMotion) {
 
         card.style.transitionDelay =
-          `${index * 55}ms`;
+          `${index * 50}ms`;
 
       }
 
     }
   );
+
 
 
   /* =======================================================
@@ -578,6 +686,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
+
   /* =======================================================
      BACK TO TOP
      ======================================================= */
@@ -614,8 +723,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+
   /* =======================================================
-     LOGO BACK TO TOP
+     LOGO → TOP
      ======================================================= */
 
   const logo =
@@ -650,8 +760,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+
   /* =======================================================
-     BACKGROUND MOUSE PARALLAX
+     BACKGROUND PARALLAX
      ======================================================= */
 
   const background =
@@ -667,7 +778,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ) {
 
     background.style.transition =
-      "transform 0.15s ease-out";
+      "transform 0.2s ease-out";
 
 
     document.addEventListener(
@@ -689,10 +800,10 @@ document.addEventListener("DOMContentLoaded", () => {
         background.style.transform =
           `
           translate(
-            ${x * -5}px,
-            ${y * -5}px
+            ${x * -3}px,
+            ${y * -3}px
           )
-          scale(1.02)
+          scale(1.01)
           `;
 
       }
@@ -701,8 +812,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+
   /* =======================================================
-     RESET PARALLAX WHEN TAB LOSES FOCUS
+     RESET PARALLAX
      ======================================================= */
 
   window.addEventListener(
@@ -724,8 +836,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
       }
 
+
+      projectCards.forEach((card) => {
+
+        card.style.transform = "";
+
+        card.style.boxShadow = "";
+
+      });
+
     }
   );
+
 
 
   /* =======================================================
@@ -735,8 +857,8 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log(
     "%c Ahmed Ali — QA Portfolio ",
     `
-    background:#55e6c1;
-    color:#04100c;
+    background:#14b89a;
+    color:#ffffff;
     padding:8px 12px;
     border-radius:4px;
     font-weight:bold;
