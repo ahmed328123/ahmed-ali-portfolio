@@ -1356,7 +1356,7 @@ a {
 
 
 /* =========================================================
-   EXPERIENCE / SKILLS / CERTIFICATIONS — PREMIUM UPDATE
+   EXPERIENCE / SKILLS / CERTIFICATIONS
    ========================================================= */
 
 .info-grid {
@@ -1439,7 +1439,7 @@ a {
 
 
 /* =========================================================
-   EXPERIENCE — PREMIUM TIMELINE
+   EXPERIENCE
    ========================================================= */
 
 .timeline-item {
@@ -1579,7 +1579,7 @@ a {
 
 
 /* =========================================================
-   SKILLS — CLEANER / LESS DASHBOARD-LIKE
+   SKILLS
    ========================================================= */
 
 .skills-boxes {
@@ -1736,7 +1736,7 @@ a {
 
 
 /* =========================================================
-   CERTIFICATIONS — COMPACT PREMIUM CARDS
+   CERTIFICATIONS
    ========================================================= */
 
 .cert-card {
@@ -1925,14 +1925,26 @@ a {
 
 
 /* =========================================================
-   LANGUAGES
+   LANGUAGES — REFINED
    ========================================================= */
 
 .languages-section {
   position: relative;
 
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding-top: 82px;
+  padding-bottom: 82px;
+}
+
+/* Smaller Communication title */
+
+.languages-section .section-title {
+  margin-top: 12px;
+  margin-bottom: 30px;
+
+  font-size:
+    clamp(2rem, 3.2vw, 3rem);
+
+  letter-spacing: -1.25px;
 }
 
 .languages-grid {
@@ -1943,13 +1955,13 @@ a {
 
   gap: 18px;
 
-  margin-top: 36px;
+  margin-top: 30px;
 }
 
 .language-card {
   position: relative;
 
-  min-height: 155px;
+  min-height: 138px;
 
   display: flex;
   flex-direction: column;
@@ -1957,7 +1969,8 @@ a {
 
   overflow: hidden;
 
-  padding: 26px;
+  padding:
+    24px 26px;
 
   border:
     1px solid var(--border);
@@ -1982,18 +1995,18 @@ a {
 
   position: absolute;
 
-  width: 130px;
-  height: 130px;
+  width: 115px;
+  height: 115px;
 
-  top: -75px;
-  right: -50px;
+  top: -70px;
+  right: -45px;
 
   border-radius: 50%;
 
   background:
     radial-gradient(
       circle,
-      rgba(85, 230, 193, 0.12),
+      rgba(85, 230, 193, 0.1),
       transparent 68%
     );
 
@@ -2001,36 +2014,40 @@ a {
 }
 
 .language-card:hover {
-  transform: translateY(-5px);
+  transform:
+    translateY(-4px);
 
   border-color:
-    rgba(85, 230, 193, 0.34);
+    rgba(85, 230, 193, 0.3);
 
   box-shadow:
-    0 16px 45px
-    rgba(0, 0, 0, 0.22),
-    0 0 30px
-    rgba(85, 230, 193, 0.04);
+    0 15px 40px
+    rgba(0, 0, 0, 0.2),
+    0 0 28px
+    rgba(85, 230, 193, 0.035);
 }
 
 .language-number {
-  color: var(--text-muted);
+  color:
+    var(--text-muted);
 
-  font-family: var(--font-mono);
+  font-family:
+    var(--font-mono);
 
-  font-size: 10px;
+  font-size: 9px;
 
   letter-spacing: 1px;
 }
 
 .language-card h3 {
-  margin-top: 26px;
+  margin-top: 20px;
 
-  font-family: var(--font-title);
+  font-family:
+    var(--font-title);
 
-  font-size: 24px;
+  font-size: 22px;
 
-  letter-spacing: -0.5px;
+  letter-spacing: -0.45px;
 }
 
 .language-level {
@@ -2038,13 +2055,15 @@ a {
   align-items: center;
   justify-content: space-between;
 
-  margin-top: 16px;
+  margin-top: 12px;
 
-  color: var(--accent);
+  color:
+    var(--accent);
 
-  font-family: var(--font-mono);
+  font-family:
+    var(--font-mono);
 
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
 
   letter-spacing: 1px;
@@ -2053,12 +2072,16 @@ a {
 .language-level::after {
   content: "●";
 
-  color: var(--accent);
+  color:
+    var(--accent);
 
-  font-size: 9px;
+  font-size: 7px;
+
+  opacity: 0.8;
 
   text-shadow:
-    0 0 10px rgba(85, 230, 193, 0.85);
+    0 0 8px
+    rgba(85, 230, 193, 0.7);
 }
 
 
@@ -2353,9 +2376,6 @@ a {
     font-size: 20px;
   }
 
-
-  /* Info becomes stacked */
-
   .info-grid {
     grid-template-columns:
       1fr;
@@ -2407,9 +2427,6 @@ a {
     margin-bottom: 0;
   }
 
-
-  /* Contact */
-
   .contact-box {
     grid-template-columns:
       1fr 1fr;
@@ -2437,9 +2454,6 @@ a {
     scroll-margin-top: 30px;
   }
 
-
-  /* Navbar */
-
   .navbar {
     position: relative;
   }
@@ -2451,9 +2465,6 @@ a {
   .nav-links {
     display: none;
   }
-
-
-  /* Hero */
 
   .hero {
     min-height: auto;
@@ -2480,9 +2491,6 @@ a {
     min-height: 520px;
   }
 
-
-  /* Projects */
-
   #projects {
     padding-top: 80px;
     padding-bottom: 85px;
@@ -2505,9 +2513,6 @@ a {
     padding: 24px;
   }
 
-
-  /* Info */
-
   .info-grid .section-label {
     font-size: 13px;
   }
@@ -2522,20 +2527,14 @@ a {
       1fr;
   }
 
-
-  /* Languages */
-
   .languages-grid {
     grid-template-columns:
       1fr;
   }
 
   .language-card {
-    min-height: 135px;
+    min-height: 128px;
   }
-
-
-  /* Contact */
 
   .contact-box {
     grid-template-columns:
@@ -2556,9 +2555,6 @@ a {
     grid-template-columns:
       1fr 1fr;
   }
-
-
-  /* Footer */
 
   .footer {
     flex-direction: column;
@@ -2584,15 +2580,9 @@ a {
     padding: 80px 0;
   }
 
-
-  /* Navbar */
-
   .logo {
     font-size: 19px;
   }
-
-
-  /* Hero */
 
   .hero {
     padding-top: 65px;
@@ -2613,9 +2603,6 @@ a {
     font-size: 14px;
   }
 
-
-  /* Buttons */
-
   .hero-actions {
     flex-direction: column;
 
@@ -2626,9 +2613,6 @@ a {
     width: 100%;
   }
 
-
-  /* Hero visual */
-
   .hero-right {
     min-height: 410px;
   }
@@ -2636,9 +2620,6 @@ a {
   .mesh-wrap {
     width: 390px;
   }
-
-
-  /* Floating cards */
 
   .floating-card {
     min-width: 115px;
@@ -2666,17 +2647,11 @@ a {
     right: 1%;
   }
 
-
-  /* Section headers */
-
   .section-top {
     align-items: flex-start;
 
     flex-direction: column;
   }
-
-
-  /* Projects */
 
   #projects .section-title {
     margin-bottom: 28px;
@@ -2706,9 +2681,6 @@ a {
     font-size: 12px;
   }
 
-
-  /* Experience */
-
   .timeline-item {
     padding-left: 24px;
   }
@@ -2716,9 +2688,6 @@ a {
   .timeline-item h3 {
     font-size: 16px;
   }
-
-
-  /* Skills */
 
   .skills-boxes {
     grid-template-columns:
@@ -2729,28 +2698,28 @@ a {
     min-height: auto;
   }
 
-
-  /* Testing badges */
-
   .testing-types {
     flex-direction: column;
 
     align-items: flex-start;
   }
 
-
-  /* Certifications */
-
   .cert-card {
     min-height: 155px;
   }
 
 
-  /* Languages */
+  /* Languages mobile */
 
   .languages-section {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    padding-top: 68px;
+    padding-bottom: 68px;
+  }
+
+  .languages-section .section-title {
+    font-size: 2.15rem;
+
+    margin-bottom: 24px;
   }
 
   .languages-grid {
@@ -2758,18 +2727,25 @@ a {
       1fr;
 
     gap: 12px;
+
+    margin-top: 24px;
   }
 
   .language-card {
-    min-height: 125px;
+    min-height: 118px;
 
-    padding: 22px;
+    padding:
+      20px 22px;
   }
 
   .language-card h3 {
-    margin-top: 18px;
+    margin-top: 16px;
 
-    font-size: 21px;
+    font-size: 20px;
+  }
+
+  .language-level {
+    margin-top: 10px;
   }
 
 
