@@ -5,12 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ahmed Ali – Software QA &amp; Test Automation Engineer</title>
   <meta name="description" content="ISTQB-certified Software QA and Test Automation Engineer in Duisburg, Germany. Playwright, Selenium, Robot Framework, Java, TypeScript, API testing and CI pipelines.">
-  <meta name="theme-color" content="#f5f8f7">
+  <meta name="theme-color" content="#f5f8f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e1715" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://ahmed328123.github.io/ahmed-ali-portfolio/">
+  <link rel="alternate" hreflang="en" href="https://ahmed328123.github.io/ahmed-ali-portfolio/">
+  <link rel="alternate" hreflang="de" href="https://ahmed328123.github.io/ahmed-ali-portfolio/de/">
+  <link rel="alternate" hreflang="x-default" href="https://ahmed328123.github.io/ahmed-ali-portfolio/">
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
 
   <!-- Link previews (LinkedIn, WhatsApp, Slack, email) -->
   <meta property="og:type" content="profile">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="de_DE">
   <meta property="og:title" content="Ahmed Ali – Software QA & Test Automation Engineer">
   <meta property="og:description" content="Test automation with Playwright, Selenium and Robot Framework. ISTQB CTFL & CT-GenAI. Open to QA roles.">
   <meta property="og:url" content="https://ahmed328123.github.io/ahmed-ali-portfolio/">
@@ -23,7 +29,7 @@
   <!-- Fonts are self-hosted (no requests to Google servers) -->
   <link rel="preload" href="./assets/fonts/IBMPlexSans-Regular-Latin1.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="./assets/fonts/IBMPlexSans-SemiBold-Latin1.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="./style.css?v=4">
+  <link rel="stylesheet" href="./style.css?v=5">
 
   <script type="application/ld+json">
   {
@@ -63,6 +69,16 @@
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
+      <details class="lang-switch">
+        <summary aria-label="Language: English. Change language">
+          <span>EN</span>
+          <svg aria-hidden="true" viewBox="0 0 12 12"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg>
+        </summary>
+        <ul class="lang-menu">
+          <li><a href="./" hreflang="en" lang="en" aria-current="page"><span>English</span><span class="lang-code">EN</span></a></li>
+          <li><a href="./de/" hreflang="de" lang="de"><span>Deutsch</span><span class="lang-code">DE</span></a></li>
+        </ul>
+      </details>
       <a class="btn btn-small" href="./assets/cv-en.pdf" target="_blank" rel="noopener">Download CV</a>
     </div>
   </header>
@@ -281,5 +297,17 @@
     <p>© 2026 Ahmed Ali, Duisburg</p>
     <a href="#top">Back to top</a>
   </footer>
+
+  <script>
+    // Close the language menu on outside click or Escape
+    (function () {
+      var menu = document.querySelector(".lang-switch");
+      if (!menu) return;
+      document.addEventListener("click", function (e) { if (!menu.contains(e.target)) menu.open = false; });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && menu.open) { menu.open = false; menu.querySelector("summary").focus(); }
+      });
+    })();
+  </script>
 </body>
 </html>
